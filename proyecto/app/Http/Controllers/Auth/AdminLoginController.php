@@ -9,17 +9,19 @@ use Auth;
 
 class AdminLoginController extends Controller
 {
-	 use AuthenticatesUsers;
+	use AuthenticatesUsers;
 
 	public function __contruct()
 	{
 		$this->middleware('guest:admin',['except'=>['logout']]);
 	}
 
+
     public function showLoginForm()
     {
     	return view('auth.admin_login');
     }
+
 
     public function login(Request $request)
     {
@@ -36,6 +38,7 @@ class AdminLoginController extends Controller
 
     	return back()->withErrors(['email'=>'E-mail o contraseña incorrecta']);
     }
+
 
     public function logout()
     {
