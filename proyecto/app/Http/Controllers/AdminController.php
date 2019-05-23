@@ -41,7 +41,7 @@ class AdminController extends Controller
             'phone'=>$request['phone']
         ]);
 
-        return 'Administrador registrado con exito';
+        return view('admin.manage_admin.exito_al_crear');
     }   
 
 
