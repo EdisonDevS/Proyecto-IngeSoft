@@ -47,7 +47,19 @@ class AdminController extends Controller
 
     public function showAdminSearchForm()
     {
-        return view('admin.manage_admin.search');
+        $admins=\App\Administrator::all();
+
+        return view('admin.manage_admin.search',compact('admins'));
+    }
+
+    public function showAdminModifyForm()
+    {
+        return view('admin.manage_admin.modify');
+    }
+
+    public function showAdminDeleteForm()
+    {
+        return view('admin.manage_admin.delete');
     }
 
 

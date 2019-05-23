@@ -11,6 +11,10 @@ Route::group(['middleware' => ['auth:admin']], function () {
 
 	Route::get('/admin/manage/search_admin', 'AdminController@showAdminSearchForm')->name('admin.manage.buscar_admin');
 
+	Route::get('/admin/manage/modify/{id}', 'AdminController@showAdminModifyForm')->name('admin.manage.modify');
+	
+	Route::get('/admin/manage/delete', 'AdminController@showAdminDeleteForm')->name('admin.manage.delete');
+
 	Route::get('/admin/manage/users', 'AdminController@showUserManagement')->name('admin.manage.users');
 
 
