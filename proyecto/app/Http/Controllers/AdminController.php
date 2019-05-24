@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Administrator;
 
 class AdminController extends Controller
 {
@@ -47,7 +48,7 @@ class AdminController extends Controller
 
     public function showAdminSearchForm()
     {
-        $admins=\App\Administrator::all();
+        $admins= Administrator::all();
 
         return view('admin.manage_admin.search',compact('admins'));
     }
@@ -59,7 +60,7 @@ class AdminController extends Controller
 
     public function showAdminDeleteForm($id)
     {
-        $admin= \App\Administrator::find($id);
+        $admin= Administrator::find($id);
 
         return view('admin.manage_admin.delete', compact('admin'));
     }
@@ -67,7 +68,7 @@ class AdminController extends Controller
 
     public function deleteAdmin($id)
     {
-        \App\Administrator::destroy($id);
+        Administrator::destroy($id);
         return redirect(route('admin.manage.buscar_admin'));
     }
 

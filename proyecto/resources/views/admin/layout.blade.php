@@ -52,14 +52,12 @@
         <!-- secciones del admin -->
         <div class="row" style="background-color: #82b1ff;padding-bottom: 10px">
             <div class="btn-group col-md-12" style="align-content: center; justify-content: center;">
-                @if (auth()->user()->name==='root')
-                    <form method="GET" action="{{ route('admin.manage.admins') }}">
-                        <button type="submit" class="btn btn-primary">Manejar admins</button>
-                    </form>
-                @endif
-                <form method="GET" action="{{ route('admin.manage.users') }}">
-                    <button type="submit" class="btn btn-primary">Manejar usuarios</button>
-                </form> 
+
+                
+                <button type="submit" class="btn btn-primary" onclick="location.href='{{ route('admin.manage.admins') }}'">Manejar admins</button>
+        
+                <button type="submit" class="btn btn-primary" onclick="location.href='{{ route('admin.manage.users') }}'">Manejar usuarios</button>
+                
             </div>
         </div>
 
