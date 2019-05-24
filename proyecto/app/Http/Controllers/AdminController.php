@@ -14,24 +14,6 @@ class AdminController extends Controller
 	}
 
 
-    public function showAdminDashboard()
-    {
-    	return view('admin.layout');
-    }
-
-
-    public function showAdminManagement()
-    {
-    	return view('admin.manage_admin.manage');
-    }
-
-
-    public function showAdminCreateForm()
-    {
-        return view('admin.manage_admin.create');
-    }
-
-
     public function createAdmin(Request $request)
     {
         \App\Administrator::create([
@@ -49,19 +31,13 @@ class AdminController extends Controller
     public function showAdminSearchForm()
     {
         $admins= Administrator::all();
-
         return view('admin.manage_admin.search',compact('admins'));
     }
 
-    public function showAdminModifyForm($id)
-    {
-        return view('admin.manage_admin.modify');
-    }
 
     public function showAdminDeleteForm($id)
     {
         $admin= Administrator::find($id);
-
         return view('admin.manage_admin.delete', compact('admin'));
     }
 
@@ -72,9 +48,26 @@ class AdminController extends Controller
         return redirect(route('admin.manage.buscar_admin'));
     }
 
-
-    public function showUserManagement()
+    public function showAdminModifyForm($id)
     {
-    	return view('admin.manage_user.manage');
+        $admin=Administrator::find($id);
+        return view('admin.manage_admin.modify', compact('admin'));
     }
+
+
+    public function modifyAdmin(Request $request)
+    {
+        $admin=Administrator::find($request['id']);
+        
+        $admin->name=$request['name'];
+        $admin->last_name=$request['last_name'];
+        $admin->phone=$request['phone'];
+        $admin->email=$request['email'];
+
+        $admin->save();
+
+        return redirect(route('admin.manage.buscar_admin'));
+
+    }
+
 }

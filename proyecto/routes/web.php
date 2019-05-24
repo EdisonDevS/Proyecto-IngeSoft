@@ -1,23 +1,47 @@
 <?php
 //grupo para las rutas de administración
 Route::group(['middleware' => ['auth:admin']], function () {
-	Route::get('/admin/dashboard', 'AdminController@showAdminDashboard')->name('admin.dashboard');
+	
+	Route::get('/admin/dashboard', function()
+    {
+    	return view('admin.layout');
+    })->name('admin.dashboard');
 
-	Route::get('/admin/manage/admins', 'AdminController@showAdminManagement')->name('admin.manage.admins');
+	
+	Route::get('/admin/manage/admins', function()
+    {
+    	return view('admin.manage_admin.manage');
+    })->name('admin.manage.admins');
 
-	Route::get('/admin/manage/create_admin', 'AdminController@showAdminCreateForm')->name('admin.manage.crear_admin');
+	
+	Route::get('/admin/manage/create_admin', function()
+    {
+        return view('admin.manage_admin.create');
+    })->name('admin.manage.crear_admin');
 
+	
 	Route::post('/admin/manage/create_admin', 'AdminController@createAdmin')->name('admin.manage.crear_admin');
 
+	
 	Route::get('/admin/manage/search_admin', 'AdminController@showAdminSearchForm')->name('admin.manage.buscar_admin');
 
+	
 	Route::get('/admin/manage/modify/{id}', 'AdminController@showAdminModifyForm')->name('admin.manage.modify');
+
+	
+	Route::post('/admin/manage/modify', 'AdminController@modifyAdmin')->name('admin.manage.modify');
+	
 	
 	Route::get('/admin/manage/delete/{id}', 'AdminController@showAdminDeleteForm')->name('admin.manage.delete');
 
+	
 	Route::get('/admin/manage/delete/comfirm/{id}', 'AdminController@deleteAdmin');		
 
-	Route::get('/admin/manage/users', 'AdminController@showUserManagement')->name('admin.manage.users');
+	
+	Route::get('/admin/manage/users', function()
+    {
+    	return view('admin.manage_user.manage');
+    })->name('admin.manage.users');
 
 
 });
