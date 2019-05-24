@@ -4,9 +4,7 @@
 	
 	<div class="container">
 		<div>
-			qdas{
-			dsafr
-		}
+			
 		</div>
 	</div>
 

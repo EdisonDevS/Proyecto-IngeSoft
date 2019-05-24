@@ -29,7 +29,7 @@
 								        	</form>
 							        	</div>
 							        	<div class="col col-md6">
-								        	<form method='GET' action="{{ route('admin.manage.delete') }}">
+								        	<form method='GET' action="{{ url('/admin/manage/delete/'.$admin->id) }}">
 								        		<button class="btn btn-danger btn-block">Eliminar</button>
 								        	</form>
 							        	</div>

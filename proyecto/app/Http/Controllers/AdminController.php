@@ -52,14 +52,23 @@ class AdminController extends Controller
         return view('admin.manage_admin.search',compact('admins'));
     }
 
-    public function showAdminModifyForm()
+    public function showAdminModifyForm($id)
     {
         return view('admin.manage_admin.modify');
     }
 
-    public function showAdminDeleteForm()
+    public function showAdminDeleteForm($id)
     {
-        return view('admin.manage_admin.delete');
+        $admin= \App\Administrator::find($id);
+
+        return view('admin.manage_admin.delete', compact('admin'));
+    }
+
+
+    public function deleteAdmin($id)
+    {
+        \App\Administrator::destroy($id);
+        return redirect(route('admin.manage.buscar_admin'));
     }
 
 
