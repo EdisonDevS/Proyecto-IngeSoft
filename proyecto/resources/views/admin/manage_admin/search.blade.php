@@ -9,6 +9,8 @@
 			      	<tr>
 				        <th>Nombre</th>
 				        <th>Apellido</th>
+				        <th>Documento</th>
+				        <th>Nacimiento (YYYY-mm-dd)</th>
 				        <th>Email</th>
 				        <th>Teléfono</th>
 				        <th>Operación</th>
@@ -19,6 +21,8 @@
 					    <tr>
 					        <td>{{ $admin->name }}</td>
 					        <td>{{ $admin->last_name }}</td>
+					        <td>{{ $admin->document }}</td>
+					        <td>{{ $admin->birth_date }}</td>
 					        <td>{{ $admin->email }}</td>
 					        <td>{{ $admin->phone }}</td>
 					        <td>
