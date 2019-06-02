@@ -20,6 +20,8 @@ class AdminController extends Controller
         \App\Administrator::create([
             'name'=>$request['name'],
             'last_name'=>$request['last_name'],
+            'document'=>$request['document'],
+            'birth_date'=>$request['birth_date'],
             'email'=>$request['email'],
             'password'=>bcrypt($request['password']),
             'phone'=>$request['phone']
