@@ -64,6 +64,8 @@ class AdminController extends Controller
         
         $admin->name=$request['name'];
         $admin->last_name=$request['last_name'];
+        $admin->document=$request['document'];
+        $admin->birth_date=$request['birth_date'];
         $admin->phone=$request['phone'];
         $admin->email=$request['email'];
 
