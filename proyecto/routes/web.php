@@ -2,6 +2,7 @@
 //grupo para las rutas de administración
 Route::group(['middleware' => ['auth:admin']], function () {
 	
+	//rutas para la gestión de administradores
 	Route::get('/admin/dashboard', function()
     {
     	return view('admin.layout');
@@ -37,11 +38,15 @@ Route::group(['middleware' => ['auth:admin']], function () {
 	
 	Route::get('/admin/manage/delete/comfirm/{id}', 'AdminController@deleteAdmin');		
 
-	
+
+	//rutas para la gestión de usuarios
 	Route::get('/admin/manage/users', function()
     {
-    	return view('admin.manage_user.manage');
+    	$users=[];
+    	return view('admin.manage_user.manage', compact('users'));
     })->name('admin.manage.users');
+
+    Route::post('/admin/manage/users', 'AdminController@searchUsers')->name('admin.manage.users');
 
 
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Administrator;
+use \App\User;
 
 class AdminController extends Controller
 {
@@ -68,6 +69,13 @@ class AdminController extends Controller
 
         return redirect(route('admin.manage.buscar_admin'));
 
+    }
+
+
+    public function searchUsers(Request $request)
+    {
+        $users=User::where('name',$request['name'])->paginate();
+        return view('admin.manage_user.manage', compact('users'));
     }
 
 }

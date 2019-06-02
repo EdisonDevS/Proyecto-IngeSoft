@@ -53,10 +53,12 @@
         <div class="row" style="background-color: #82b1ff;padding-bottom: 10px">
             <div class="btn-group col-md-12" style="align-content: center; justify-content: center;">
 
-                
-                <button type="submit" class="btn btn-primary" onclick="location.href='{{ route('admin.manage.admins') }}'">Manejar admins</button>
-        
-                <button type="submit" class="btn btn-primary" onclick="location.href='{{ route('admin.manage.users') }}'">Manejar usuarios</button>
+                @if(auth()->user()->name == 'root')
+                    <button type="submit" class="btn btn-primary" onclick="location.href='{{ route('admin.manage.admins') }}'">Manejar admins</button>
+                @endif
+                <button type="submit" class="btn btn-primary" onclick="location.href='{{ route('admin.manage.users') }}'">Manejar clientes</button>
+
+                <button type="submit" class="btn btn-primary" onclick="location.href='{{ route('admin.manage.users') }}'">Manejar productos</button>
                 
             </div>
         </div>
