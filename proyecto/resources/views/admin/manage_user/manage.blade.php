@@ -46,7 +46,7 @@
 						        <td>
 						        	<div class="row">
 							        	<div class="col col-md6">
-								        	<form method='GET' action="{{ url('/admin/manage/modify/'.$user->id) }}">
+								        	<form method='GET' action="{{ url('/admin/manage/users/modify/'.$user->id) }}">
 								        		<button class="btn btn-primary btn-block">Modificar</button>
 								        	</form>
 							        	</div>

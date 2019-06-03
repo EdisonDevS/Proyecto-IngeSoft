@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     public function createAdmin(Request $request)
     {
-        \App\Administrator::create([
+        Administrator::create([
             'name'=>$request['name'],
             'last_name'=>$request['last_name'],
             'document'=>$request['document'],
@@ -80,6 +80,12 @@ class AdminController extends Controller
     {
         $users=User::where('name',$request['name'])->paginate();
         return view('admin.manage_user.manage', compact('users'));
+    }
+
+    public function showUserModifyForm($id)
+    {
+        $user=User::find($id);
+        return view('admin.manage_user.modify', compact('user'));
     }
 
 }

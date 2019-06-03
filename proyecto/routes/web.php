@@ -36,7 +36,7 @@ Route::group(['middleware' => ['auth:admin']], function () {
 	Route::get('/admin/manage/delete/{id}', 'AdminController@showAdminDeleteForm')->name('admin.manage.delete');
 
 	
-	Route::get('/admin/manage/delete/comfirm/{id}', 'AdminController@deleteAdmin');		
+	Route::get('/admin/manage/delete/confirm/{id}', 'AdminController@deleteAdmin');		
 
 
 	//rutas para la gestión de usuarios
@@ -47,6 +47,10 @@ Route::group(['middleware' => ['auth:admin']], function () {
     })->name('admin.manage.users');
 
     Route::post('/admin/manage/users', 'AdminController@searchUsers')->name('admin.manage.users');
+
+    Route::get('/admin/manage/users/modify/{id}', 'AdminController@showUserModifyForm')->name('admin.manage.users.modify');
+
+    Route::post('/admin/manage/users/modify', 'UserController@modifyUser')->name('admin.manage.users.modify');
 
 
 });

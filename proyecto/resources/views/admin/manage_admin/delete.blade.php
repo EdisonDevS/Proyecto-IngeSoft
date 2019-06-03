@@ -10,7 +10,7 @@
 	
 		<div class="row">
 			<div class="col col-md-6">
-				<form method="GET" action="{{ url('/admin/manage/delete/comfirm/'.$admin->id) }}">
+				<form method="GET" action="{{ url('/admin/manage/delete/confirm/'.$admin->id) }}">
 					<button type="submit" class="btn btn-danger btn-block">Eliminar</button>
 				</form>
 			</div>	
