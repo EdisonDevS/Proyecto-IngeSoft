@@ -11,6 +11,7 @@ class Conyugue extends Model
         'document', 'name', 'last_name', 'gender', 'user_id',
     ];
 
+
     public function user()
     {
     	return $this->belongsTo('App\User');
