@@ -15,11 +15,12 @@ class CreateConyuguesTable extends Migration
     {
         Schema::create('conyugues', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('document')->unique();
+            $table->string('name');
+            $table->string('last_name');
             $table->string('gender');
-            $table->unsignedBigInteger('person_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
-            $table->foreign('person_id')->references('id')->on('people');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

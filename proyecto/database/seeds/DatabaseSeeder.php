@@ -21,10 +21,5 @@ class DatabaseSeeder extends Seeder
         $a->password=bcrypt('socialismo');
         $a->save();
 
-        $u=new User;
-        $u->name='usuario común';
-        $u->email='comun@user.com';
-        $u->password=bcrypt('socialismo');
-        $u->save();
     }
 }
