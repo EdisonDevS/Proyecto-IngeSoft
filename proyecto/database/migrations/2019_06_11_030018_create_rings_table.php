@@ -15,6 +15,7 @@ class CreateRingsTable extends Migration
     {
         Schema::create('rings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('previous_organization_id')->nullable();
             $table->foreign('previous_organization_id')->references('id')->on('previous_organizations');
             $table->timestamps();
         });
