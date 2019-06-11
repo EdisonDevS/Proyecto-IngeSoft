@@ -15,7 +15,7 @@ class CreateCeremoniesTable extends Migration
     {
         Schema::create('ceremonies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->$table->unsignedBigInteger('package_id')->nullable();
+            $table->unsignedBigInteger('package_id')->nullable();
             $table->foreign('package_id')->references('id')->on('packages');
             $table->timestamps();
         });
