@@ -4,21 +4,21 @@ Route::group(['middleware' => ['auth:admin']], function () {
 	
 	//rutas para la gestión de administradores
 	Route::get('/admin/dashboard', function()
-    {
-    	return view('admin.layout');
-    })->name('admin.dashboard');
+	{
+		return view('admin.layout');
+	})->name('admin.dashboard');
 
 	
 	Route::get('/admin/manage/admins', function()
-    {
-    	return view('admin.manage_admin.manage');
-    })->name('admin.manage.admins');
+	{
+		return view('admin.manage_admin.manage');
+	})->name('admin.manage.admins');
 
 	
 	Route::get('/admin/manage/create_admin', function()
-    {
-        return view('admin.manage_admin.create');
-    })->name('admin.manage.crear_admin');
+	{
+		return view('admin.manage_admin.create');
+	})->name('admin.manage.crear_admin');
 
 	
 	Route::post('/admin/manage/create_admin', 'AdminController@createAdmin')->name('admin.manage.crear_admin');
@@ -41,16 +41,16 @@ Route::group(['middleware' => ['auth:admin']], function () {
 
 	//rutas para la gestión de usuarios
 	Route::get('/admin/manage/users', function()
-    {
-    	$users=[];
-    	return view('admin.manage_user.manage', compact('users'));
-    })->name('admin.manage.users');
+	{
+		$users=[];
+		return view('admin.manage_user.manage', compact('users'));
+	})->name('admin.manage.users');
 
-    Route::post('/admin/manage/users', 'AdminController@searchUsers')->name('admin.manage.users');
+	Route::post('/admin/manage/users', 'AdminController@searchUsers')->name('admin.manage.users');
 
-    Route::get('/admin/manage/users/modify/{id}', 'AdminController@showUserModifyForm')->name('admin.manage.users.modify');
+	Route::get('/admin/manage/users/modify/{id}', 'AdminController@showUserModifyForm')->name('admin.manage.users.modify');
 
-    Route::post('/admin/manage/users/modify', 'UserController@modifyUser')->name('admin.manage.users.modify');
+	Route::post('/admin/manage/users/modify', 'UserController@modifyUser')->name('admin.manage.users.modify');
 
 
 });
@@ -71,7 +71,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::post('/admin/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
 	Route::get('/', function () {
-	    return view('welcome');
+		return view('welcome');
 	});
 
 	Auth::routes();

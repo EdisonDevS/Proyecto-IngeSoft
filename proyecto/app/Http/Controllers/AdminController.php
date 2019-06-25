@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Administrator;
 use \App\User;
+use \App\Conyugue;
 
 class AdminController extends Controller
 {
@@ -15,77 +16,77 @@ class AdminController extends Controller
 	}
 
 
-    public function createAdmin(Request $request)
-    {
-        Administrator::create([
-            'name'=>$request['name'],
-            'last_name'=>$request['last_name'],
-            'document'=>$request['document'],
-            'birth_date'=>$request['birth_date'],
-            'email'=>$request['email'],
-            'password'=>bcrypt($request['password']),
-            'phone'=>$request['phone']
-        ]);
+	public function createAdmin(Request $request)
+	{
+		Administrator::create([
+			'name'=>$request['name'],
+			'last_name'=>$request['last_name'],
+			'document'=>$request['document'],
+			'birth_date'=>$request['birth_date'],
+			'email'=>$request['email'],
+			'password'=>bcrypt($request['password']),
+			'phone'=>$request['phone']
+		]);
 
-        return view('admin.manage_admin.exito_al_crear');
-    }   
-
-
-    public function showAdminSearchForm()
-    {
-        $admins= Administrator::all();
-        return view('admin.manage_admin.search',compact('admins'));
-    }
+		return view('admin.manage_admin.exito_al_crear');
+	}   
 
 
-    public function showAdminDeleteForm($id)
-    {
-        $admin= Administrator::find($id);
-        return view('admin.manage_admin.delete', compact('admin'));
-    }
+	public function showAdminSearchForm()
+	{
+		$admins= Administrator::all();
+		return view('admin.manage_admin.search',compact('admins'));
+	}
 
 
-    public function deleteAdmin($id)
-    {
-        Administrator::destroy($id);
-        return redirect(route('admin.manage.buscar_admin'));
-    }
-
-    public function showAdminModifyForm($id)
-    {
-        $admin=Administrator::find($id);
-        return view('admin.manage_admin.modify', compact('admin'));
-    }
+	public function showAdminDeleteForm($id)
+	{
+		$admin= Administrator::find($id);
+		return view('admin.manage_admin.delete', compact('admin'));
+	}
 
 
-    public function modifyAdmin(Request $request)
-    {
-        $admin=Administrator::find($request['id']);
-        
-        $admin->name=$request['name'];
-        $admin->last_name=$request['last_name'];
-        $admin->document=$request['document'];
-        $admin->birth_date=$request['birth_date'];
-        $admin->phone=$request['phone'];
-        $admin->email=$request['email'];
+	public function deleteAdmin($id)
+	{
+		Administrator::destroy($id);
+		return redirect(route('admin.manage.buscar_admin'));
+	}
 
-        $admin->save();
-
-        return redirect(route('admin.manage.buscar_admin'));
-
-    }
+	public function showAdminModifyForm($id)
+	{
+		$admin=Administrator::find($id);
+		return view('admin.manage_admin.modify', compact('admin'));
+	}
 
 
-    public function searchUsers(Request $request)
-    {
-        $users=User::where('name',$request['name'])->paginate();
-        return view('admin.manage_user.manage', compact('users'));
-    }
+	public function modifyAdmin(Request $request)
+	{
+		$admin=Administrator::find($request['id']);
+		
+		$admin->name=$request['name'];
+		$admin->last_name=$request['last_name'];
+		$admin->document=$request['document'];
+		$admin->birth_date=$request['birth_date'];
+		$admin->phone=$request['phone'];
+		$admin->email=$request['email'];
 
-    public function showUserModifyForm($id)
-    {
-        $user=User::find($id);
-        return view('admin.manage_user.modify', compact('user'));
-    }
+		$admin->save();
+
+		return redirect(route('admin.manage.buscar_admin'));
+
+	}
+
+
+	public function searchUsers(Request $request)
+	{
+		$users=Conyugue::where('name',$request['name'])->orWhere('document',$request['name'])->get( );
+		return view('admin.manage_user.manage', compact('users'));
+	}
+
+	public function showUserModifyForm($id)
+	{
+		$user=Conyugue::find($id);
+		return view('admin.manage_user.modify', compact('user'));
+	}
 
 }

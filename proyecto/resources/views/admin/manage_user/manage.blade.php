@@ -8,7 +8,7 @@
 				<div class="col-md-2"></div>
 			
 				<div class="col-md-2">
-					<label for="name" class="col-form-label text-md-right"><strong>Nombre:</strong></label>
+					<label for="name" class="col-form-label text-md-right"><strong>Nombre o documento:</strong></label>
 				</div>
 				
 				<div class="col-md-4">
@@ -41,8 +41,8 @@
 						    <tr>
 						        <td>{{ $user->name }}</td>
 						        <td>{{ $user->last_name }}</td>
-						        <td>{{ $user->email }}</td>
-						        <td>{{ $user->phone }}</td>
+						        <td>{{ $user->user->email }}</td>
+						        <td>{{ $user->user->phone }}</td>
 						        <td>
 						        	<div class="row">
 							        	<div class="col col-md6">
