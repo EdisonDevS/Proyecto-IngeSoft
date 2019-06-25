@@ -32,7 +32,7 @@
         <!-- encabezado -->
         <div class="row" style="background-color: #4d82cb">
             <div class="container col-md-10">
-                <h1 style="color: #ffffff">Bienvenido {{ auth()->user()->name }}</h1>      
+                <h1 style="color: #ffffff">Bienvenido</h1>      
             </div>
 
             <div class="container col-md-1">
