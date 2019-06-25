@@ -61,6 +61,8 @@ Route::group(['middleware' => ['auth:web']], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	Route::get('/profile', 'UserController@profile')->name('profile');
+
+	Route::post('/profile', 'UserController@profileModify')->name('profile');
 });
 
 

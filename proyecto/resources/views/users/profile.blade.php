@@ -8,8 +8,10 @@
                 <div class="card-header">{{ __('Mi perfil') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('profile') }}">
                         @csrf
+                        <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+
                         <h1>Primer cónyuge</h1>
                         <div id="conyuge1" class="container">
                             <div class="card">
