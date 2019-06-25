@@ -66,13 +66,11 @@
                                     </form>
                                     
                                     <!-- enlace al perfil del usuario -->
-                                    <a class="dropdown-item" href=""
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('profile-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
                                         {{ __('Perfil') }}
                                     </a>
 
-                                    <form id="profile-form" action="" method="POST" style="display: none;">
+                                    <form id="profile-form" action="" method="GET" style="display: none;">
                                         @csrf
                                     </form>
 

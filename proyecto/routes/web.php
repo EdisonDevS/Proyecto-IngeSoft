@@ -59,6 +59,8 @@ Route::group(['middleware' => ['auth:admin']], function () {
 //grupo para las rutas del usuario común
 Route::group(['middleware' => ['auth:web']], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
+
+	Route::get('/profile', 'UserController@profile')->name('profile');
 });
 
 

@@ -21,4 +21,9 @@ class UserController extends Controller
 
 		return redirect(route('admin.manage.users'));
 	}
+
+	public function profile()
+	{
+		return view('users.profile');
+	}
 }
