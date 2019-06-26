@@ -2,8 +2,16 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+        <div style="justify-content: center; display: flex;" class="col-md-12">
+            <img src="{{ auth()->user()->photo }}" class="rounded-circle">
+        </div>
+        <div style="justify-content: center; display: flex;margin-top: 5px; margin-bottom: 5px" class="col-md-12">
+            <form method="GET" action="{{ route('change_profile_photo') }}">
+                <button class="btn btn-primary">Cambiar foto</button>
+            </form>
+        </div>
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Mi perfil') }}</div>
 

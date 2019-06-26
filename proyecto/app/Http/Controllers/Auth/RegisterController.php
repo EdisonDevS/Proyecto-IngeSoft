@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/change_profile_picture';
 
     /**
      * Create a new controller instance.
@@ -62,8 +62,9 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Array $data)
     {
+
         $conyuge1=Conyugue::create([
             'document'=>$data['document1'],
             'name'=>$data['name1'],

@@ -63,6 +63,12 @@ Route::group(['middleware' => ['auth:web']], function () {
 	Route::get('/profile', 'UserController@profile')->name('profile');
 
 	Route::post('/profile', 'UserController@profileModify')->name('profile');
+
+	Route::get('/change_profile_picture', function(){
+		return view('users.change_profile_picture');
+	})->name('change_profile_photo');
+
+	Route::post('/change_profile_picture', 'UserController@changeProfilePicture')->name('change_profile_photo');
 });
 
 

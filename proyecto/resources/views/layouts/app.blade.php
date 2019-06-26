@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Página de bodas :v
+                    <h1>Bodas</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -49,12 +49,22 @@
                                 </li>
                             @endif
                         @else
+                            <img src="{{ auth()->user()->photo }}" style="width: 30px; height: 30px" class="rounded-circle">
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Opciones <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                        {{ __('Mi perfil') }}
+                                    </a>
+
+                                    <form id="profile-form" action="" method="GET" style="display: none;">
+                                        @csrf
+                                    </form>
+
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -66,13 +76,6 @@
                                     </form>
                                     
                                     <!-- enlace al perfil del usuario -->
-                                    <a class="dropdown-item" href="{{ route('profile') }}">
-                                        {{ __('Perfil') }}
-                                    </a>
-
-                                    <form id="profile-form" action="" method="GET" style="display: none;">
-                                        @csrf
-                                    </form>
 
                                 </div>
                             </li>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use \App\User;
 use \App\Conyugue;
-
+use Intervention\Image\Facades\Image as Image;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -52,5 +52,24 @@ class UserController extends Controller
         $user->conyugues()->save($conyuge2);
 
         return redirect(route('profile'));
+	}
+
+
+	public function changeProfilePicture(Request $request)
+	{
+		$this->validate($request, [
+			'photo'=>'required|image'
+		]);
+
+		$user=User::find($request['id']);
+
+		$photo_name='images/users/'.$user->id.'.'.$request->file('photo')->getClientOriginalExtension();
+
+        Image::make($request->file('photo'))->resize(255,255)->save(public_path($photo_name));
+
+        $user->photo=$photo_name;
+        $user->save();
+
+        return redirect('/');
 	}
 }
