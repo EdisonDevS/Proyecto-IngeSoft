@@ -64,6 +64,14 @@
                                         @csrf
                                     </form>
 
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                        {{ __('P.Q.R.S') }}
+                                    </a>
+
+                                    <form id="peticiones-form" action="" method="GET" style="display: none;">
+                                        @csrf
+                                    </form>
+
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

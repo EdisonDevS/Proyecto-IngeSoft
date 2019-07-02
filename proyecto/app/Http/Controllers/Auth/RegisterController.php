@@ -50,7 +50,6 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'phone' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -65,29 +64,10 @@ class RegisterController extends Controller
     protected function create(Array $data)
     {
 
-        $conyuge1=Conyugue::create([
-            'document'=>$data['document1'],
-            'name'=>$data['name1'],
-            'last_name'=>$data['last_name1'],
-            'gender'=>$data['gender1'],
-        ]);
-
-        $conyuge2=Conyugue::create([
-            'document'=>$data['document2'],
-            'name'=>$data['name2'],
-            'last_name'=>$data['last_name2'],
-            'gender'=>$data['gender2'],
-        ]);
-
         $user=User::create([
-            'phone' => $data['phone'],
             'email' => $data['email'],
-            'budget' => $data['budget'],
             'password' => Hash::make($data['password']),
         ]);
-
-        $user->conyugues()->save($conyuge1);
-        $user->conyugues()->save($conyuge2);
 
         return $user;
     }
