@@ -47,6 +47,8 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Recepcion' => $baseDir . '/app/Recepcion.php',
+    'App\\RelacionActividadLunaDeMiel' => $baseDir . '/app/RelacionActividadLunaDeMiel.php',
+    'App\\RelacionActividadRecepcion' => $baseDir . '/app/RelacionActividadRecepcion.php',
     'App\\Transporte' => $baseDir . '/app/Transporte.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Vestuario' => $baseDir . '/app/Vestuario.php',

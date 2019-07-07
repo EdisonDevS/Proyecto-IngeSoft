@@ -421,6 +421,8 @@ class ComposerStaticInitf05fd9012843a767a0f44e37102b0c87
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Recepcion' => __DIR__ . '/../..' . '/app/Recepcion.php',
+        'App\\RelacionActividadLunaDeMiel' => __DIR__ . '/../..' . '/app/RelacionActividadLunaDeMiel.php',
+        'App\\RelacionActividadRecepcion' => __DIR__ . '/../..' . '/app/RelacionActividadRecepcion.php',
         'App\\Transporte' => __DIR__ . '/../..' . '/app/Transporte.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Vestuario' => __DIR__ . '/../..' . '/app/Vestuario.php',

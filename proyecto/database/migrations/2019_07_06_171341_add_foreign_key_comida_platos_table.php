@@ -14,8 +14,8 @@ class AddForeignKeyComidaPlatosTable extends Migration
     public function up()
     {
         Schema::table('comida_platos', function (Blueprint $table) {
-            $table->integer('comida_id')->unsigned();
-            $table->integer('plato_id')->unsigned();
+            $table->unsignedBigInteger('comida_id');
+            $table->unsignedBigInteger('plato_id');
 
             $table->foreign('comida_id')->references('id')->on('comidas');
             $table->foreign('plato_id')->references('id')->on('platos');

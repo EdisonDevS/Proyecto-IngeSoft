@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyCeremoniasTable extends Migration
+class AddForeignKeyRecepcionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class AddForeignKeyCeremoniasTable extends Migration
      */
     public function up()
     {
-        Schema::table('ceremonias', function (Blueprint $table) {
-            $table->unsignedBigInteger('transporte_id');
+        Schema::table('recepcions', function (Blueprint $table) {
             $table->unsignedBigInteger('lugar_id');
 
-            $table->foreign('transporte_id')->references('id')->on('transportes');
-            $table->foreign('lugar_id')->references('id')->on('lugars');    
+            $table->foreign('lugar_id')->references('id')->on('lugars'); 
         });
     }
 
@@ -29,7 +27,7 @@ class AddForeignKeyCeremoniasTable extends Migration
      */
     public function down()
     {
-        Schema::table('ceremonias', function (Blueprint $table) {
+        Schema::table('recepcions', function (Blueprint $table) {
             //
         });
     }
