@@ -15,6 +15,10 @@ class CreateActividadRecepcionsTable extends Migration
     {
         Schema::create('actividad_recepcions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('image');
+            $table->string('description');
+            $table->double('Price');
             $table->timestamps();
         });
     }

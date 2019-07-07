@@ -15,6 +15,11 @@ class CreateTransportesTable extends Migration
     {
         Schema::create('transportes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('type');
+            $table->string('image');
+            $table->string('description');
+            $table->double('price');
             $table->timestamps();
         });
     }

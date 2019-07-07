@@ -15,6 +15,9 @@ class CreateMaquillajesTable extends Migration
     {
         Schema::create('maquillajes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('image');
+            $table->string('description');
+            $table->double('price');
             $table->timestamps();
         });
     }

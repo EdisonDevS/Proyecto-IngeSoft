@@ -15,6 +15,10 @@ class CreateVestuariosTable extends Migration
     {
         Schema::create('vestuarios', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('talla');
+            $table->string('image');
+            $table->string('description');
+            $table->double('price');
             $table->timestamps();
         });
     }
