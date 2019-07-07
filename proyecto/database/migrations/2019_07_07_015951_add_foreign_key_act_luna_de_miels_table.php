@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyRelacionActividadLunaDeMielsTable extends Migration
+class AddForeignKeyActLunaDeMielsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddForeignKeyRelacionActividadLunaDeMielsTable extends Migration
      */
     public function up()
     {
-        Schema::table('relacion_actividad_luna_de_miels', function (Blueprint $table) {
+        Schema::table('rel_act_luna_de_miels', function (Blueprint $table) {
             $table->unsignedBigInteger('luna_de_miel_id');
             $table->unsignedBigInteger('actividad_luna_de_miel_id');
 

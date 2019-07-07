@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRelacionActividadLunaDeMielsTable extends Migration
+class CreateRelActLunaDeMielsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRelacionActividadLunaDeMielsTable extends Migration
      */
     public function up()
     {
-        Schema::create('relacion_actividad_luna_de_miels', function (Blueprint $table) {
+        Schema::create('rel_act_luna_de_miels', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateRelacionActividadLunaDeMielsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('relacion_actividad_luna_de_miels');
+        Schema::dropIfExists('rel_act_luna_de_miels');
     }
 }
