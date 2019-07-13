@@ -2382,8 +2382,7 @@
   <link rel="preload" href="./Registro _ Misitio_files/bolt-main-r.init.js.descarga" as="script" crossorigin="anonymous">
   <link rel="preload" href="./Registro _ Misitio_files/bolt-main-r.animations.js.descarga" as="script" crossorigin="anonymous">
   <link rel="preload" href="./Registro _ Misitio_files/bolt-main-prod.js.descarga" as="script" crossorigin="anonymous">
-  <link rel="preconnect" href="https://events.wix.com/events-server/html/widget">
-  <link rel="preconnect" href="https://bookings.wixapps.net/index">
+
   <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lodash" src="./Registro _ Misitio_files/lodash.min.js.descarga" crossorigin="anonymous"></script>
   <script charset="utf-8" src="./Registro _ Misitio_files/bolt-main-r.init.js.descarga" crossorigin="anonymous"></script>
   <script charset="utf-8" src="./Registro _ Misitio_files/bolt-main-r.animations.js.descarga" crossorigin="anonymous"></script>
@@ -5652,7 +5651,7 @@
                                           <div data-packed="true" style="width: 178px; pointer-events: none; visibility: hidden;" data-hidden="true" class="txtNew" id="comp-jxm8mvzy">
                                             <p class="font_8"><span class="color_11">¡Gracias por elegirnos!</span></p>
                                           </div>
-                                          
+
                                         </div>
                                       </div>
                                     </form>
