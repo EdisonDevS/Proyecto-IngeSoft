@@ -1,0 +1,60 @@
+.ec-minicart__count,
+.ec-minicart__subtotal {
+	display: block !important;
+}
+
+.ec-minicart--s .ec-minicart__title {
+	display: block !important;
+}
+
+.ec-minicart--xxxs .ec-minicart__counter,
+.ec-minicart--xxs .ec-minicart__counter,
+.ec-minicart--xs .ec-minicart__counter,
+.ec-minicart--s .ec-minicart__counter,
+.ec-minicart--m .ec-minicart__counter {
+	display: flex !important;
+}
+
+.ec-minicart--pill.ec-minicart--m,
+.ec-minicart--pill.ec-minicart--l,
+.ec-minicart--pill.ec-minicart--xl,
+.ec-minicart--pill.ec-minicart--xxl {
+	padding: 15px !important;
+}
+
+.ec-minicart--rect.ec-minicart--m,
+.ec-minicart--rect.ec-minicart--l,
+.ec-minicart--rect.ec-minicart--xl,
+.ec-minicart--rect.ec-minicart--xxl {
+	padding: 11px !important;
+}
+
+.ec-minicart--m .ec-minicart__icon,
+.ec-minicart--l .ec-minicart__icon {
+	width: 36px !important;
+	height: 36px !important;
+}
+
+.ec-minicart--xl .ec-minicart__icon,
+.ec-minicart--xxl .ec-minicart__icon {
+	width: 42px !important;
+	height: 42px !important;
+}
+
+.ec-minicart--l .ec-minicart__wrap {
+	padding: 0 6px 0 4px !important;
+	transform: translateY(3px) !important;
+}
+
+.ec-minicart--xl .ec-minicart__wrap {
+	padding: 0 6px 0 2px !important;
+}
+
+.ec-minicart--xxl .ec-minicart__wrap {
+	padding: 0 8px 0 6px !important;
+}
+
+.ec-minicart--xl .ec-minicart__wrap .ec-minicart__wrap,
+.ec-minicart--xxl .ec-minicart__wrap .ec-minicart__wrap {
+	transform: translateY(1px) !important;
+}
