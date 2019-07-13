@@ -5639,7 +5639,7 @@
                                           </div>
                                           <div class="style-jxm8siwj_left-direction style-jxm8siwj" data-disabled="false" style="top:;bottom:;left:;right:;width:240px;height:42px;position:" id="comp-jxm8siuz"><label
                                               style="padding-left:0;padding-right:20px;display:none;margin-bottom:14px;text-align:left;direction:ltr" for="comp-jxm8siuzinput" id="comp-jxm8siuzlabel" class="style-jxm8siwjlabel"></label><input
-                                              type="password" style="padding-left:12px" value="" placeholder="Confirmar clave" maxlength="100" class="has-custom-focus style-jxm8siwjinput" id="password-confirm" name="password-confirmation">
+                                              type="password" style="padding-left:12px" value="" placeholder="Confirmar clave" maxlength="100" class="has-custom-focus style-jxm8siwjinput" id="password_confirmation" name="password_confirmation">
                                           </div>
                                           @error('password')
                                               <span class="invalid-feedback" role="alert">
