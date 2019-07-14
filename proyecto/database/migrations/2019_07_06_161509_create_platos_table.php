@@ -17,7 +17,7 @@ class CreatePlatosTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('type');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('description');
             $table->double('price');
             $table->timestamps();

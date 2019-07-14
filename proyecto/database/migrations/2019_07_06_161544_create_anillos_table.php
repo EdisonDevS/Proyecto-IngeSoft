@@ -16,7 +16,7 @@ class CreateAnillosTable extends Migration
         Schema::create('anillos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('talla');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('description');
             $table->double('price');
             $table->timestamps();

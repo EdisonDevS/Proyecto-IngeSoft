@@ -16,10 +16,11 @@ class CreateLugarsTable extends Migration
         Schema::create('lugars', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('type');
             $table->string('detail');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('description');
-            $table->double('Price');
+            $table->double('price');
             $table->timestamps();
         });
     }

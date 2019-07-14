@@ -16,7 +16,7 @@ class CreateActividadLunaDeMielsTable extends Migration
         Schema::create('actividad_luna_de_miels', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('description');
             $table->double('Price');
             $table->timestamps();

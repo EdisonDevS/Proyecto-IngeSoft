@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth:admin']], function () {
 	Route::get('/admin/manage/modify/{id}', 'AdminController@showAdminModifyForm')->name('admin.manage.modify');
 
 	
-	Route::post('/admin/manage/modify', 'AdminController@modifyAdmin')->name('admin.manage.modify');
+	Route::post('/admin/manage/modify', 'AdminController@modifyAdmin')->name('admi.manage.modify');
 	
 	
 	Route::get('/admin/manage/delete/{id}', 'AdminController@showAdminDeleteForm')->name('admin.manage.delete');
@@ -55,18 +55,38 @@ Route::group(['middleware' => ['auth:admin']], function () {
 
 	// rutas para la creacion de productos
 
+	Route::get('/admin/manage/product', function(){
+		return view('admin.manage_product.manage');
+	})->name('admin.manage.products');
+
 	Route::get('/admin/manage/product/create', function(){
 		return view('admin.manage_product.crear_producto');
 	})->name('crear_producto');
 
 
+	Route::post('/admin/manage/product/create/lugar_luna', 'ProductoController@crearLugarLunaDeMiel')->name('crear_lugar_lm');
+
+	Route::post('/admin/manage/product/create/lugar_recepcion', 'ProductoController@crearLugarRecepcion')->name('crear_lugar_recepcion');
+
+	Route::post('/admin/manage/product/create/lugar_ceremonia', 'ProductoController@crearLugarCeremonia')->name('crear_lugar_ceremonia');
+
 	Route::post('/admin/manage/product/create/ropa', 'ProductoController@crearRopa')->name('crear_ropa');
 
 	Route::post('/admin/manage/product/create/maquillaje', 'ProductoController@crearMaquillaje')->name('crear_maquillaje');
 
-	Route::post('/admin/manage/product/create/anillos', 'ProductoController@crearTransporte')->name('crear_transporte');
+	Route::post('/admin/manage/product/create/transporte', 'ProductoController@crearTransporte')->name('crear_transporte');
 
 	Route::post('/admin/manage/product/create/cena', 'ProductoController@crearCena')->name('crear_cena');
+
+	Route::post('/admin/manage/product/create/maquillaje', 'ProductoController@crearMaquillaje')->name('crear_maquillaje');
+
+	Route::post('/admin/manage/product/create/anillo', 'ProductoController@crearAnillo')->name('crear_anillo');
+
+	Route::post('/admin/manage/product/create/actividad_recepcion', 'ProductoController@crearActividadRecepcion')->name('actividad_recepcion');
+
+	Route::post('/admin/manage/product/create/actividad_LM', 'ProductoController@crearActividadLunaDeMiel')->name('actividad_lm');
+
+
 
 	Route::post('/admin/manage/product/create/ceremonia', 'ProductoController@crearCeremonia')->name('crear_ceremonia');
 
