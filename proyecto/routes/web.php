@@ -53,6 +53,23 @@ Route::group(['middleware' => ['auth:admin']], function () {
 	Route::post('/admin/manage/users/modify', 'UserController@modifyUser')->name('admin.manage.users.modify');
 
 
+	// rutas para la creacion de productos
+
+	Route::get('/admin/manage/product/create', function(){
+		return view('admin.manage_product.crear_producto');
+	})->name('crear_producto');
+
+
+	Route::post('/admin/manage/product/create/ropa', 'ProductoController@crearRopa')->name('crear_ropa');
+
+	Route::post('/admin/manage/product/create/maquillaje', 'ProductoController@crearMaquillaje')->name('crear_maquillaje');
+
+	Route::post('/admin/manage/product/create/anillos', 'ProductoController@crearTransporte')->name('crear_transporte');
+
+	Route::post('/admin/manage/product/create/cena', 'ProductoController@crearCena')->name('crear_cena');
+
+	Route::post('/admin/manage/product/create/ceremonia', 'ProductoController@crearCeremonia')->name('crear_ceremonia');
+
 });
 
 
