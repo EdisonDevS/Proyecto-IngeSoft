@@ -9,7 +9,7 @@
 		</div>
 
 		<div class="col-md-6" style="margin-top: 10px">
-			<form method='GET' action="{{ route('admin.manage.buscar_admin') }}">
+			<form method='GET' action="{{ route('consultar_productos') }}">
 				<button type="submit" class="btn btn-success btn-block" style="height: 300px">Ver productos</button>
 			</form>
 		</div>

@@ -88,7 +88,35 @@ Route::group(['middleware' => ['auth:admin']], function () {
 
 
 
+
 	Route::post('/admin/manage/product/create/ceremonia', 'ProductoController@crearCeremonia')->name('crear_ceremonia');
+
+
+
+	Route::get('/admin/consultar/productos', 'ProductoController@consultarProductos')->name('consultar_productos');
+
+	Route::get('/admin/modificar/productos/lugar_ceremonia/{id}', 'ProductoController@modificarLugarCeremonia')->name('modificar_lugar_Ceremonia');
+
+	Route::get('/admin/modificar/productos/lugar_luna_de_miel/{id}', 'ProductoController@modificarLugarLunaDeMiel')->name('modificar_lugar_lm');
+
+	Route::get('/admin/modificar/productos/lugar_recepcion/{id}', 'ProductoController@modificarLugarRecepcion')->name('modificar_lugar_recepcion');
+
+	Route::get('/admin/modificar/productos/transporte/{id}', 'ProductoController@modificarTransporte')->name('modificar_transporte');
+
+	Route::get('/admin/modificar/productos/pastel/{id}', 'ProductoController@modificarPastel')->name('modificar_pastel');
+
+
+	Route::get('/admin/modificar/productos/vestuario/{id}', 'ProductoController@modificarVestuario')->name('modificar_vestuario');
+
+	Route::get('/admin/modificar/productos/maquillaje/{id}', 'ProductoController@modificarMaquillaje')->name('modificar_maquillaje');
+
+	Route::get('/admin/modificar/productos/anillo/{id}', 'ProductoController@modificarAnillo')->name('modificar_anillo');
+
+	Route::get('/admin/modificar/productos/actividad_recepcion/{id}', 'ProductoController@modificarActividadRecepcion')->name('modificar_actividad_recepcion');
+
+	Route::get('/admin/modificar/productos/actividad_lm/{id}', 'ProductoController@modificarActividadLunaDeMiel')->name('modificar_actividad_lm');
+
+
 
 });
 
