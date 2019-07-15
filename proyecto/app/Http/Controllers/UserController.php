@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use \App\User;
 use \App\Conyugue;
+use \App\Lugar;
 use Intervention\Image\Facades\Image as Image;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class UserController extends Controller
 	public function modifyUser(Request $request)
 	{
 		$conyugue=Conyugue::find($request['id']);
-		
+
 		$conyugue->name=$request['name'];
 		$conyugue->last_name=$request['last_name'];
 		$conyugue->document=$request['document'];
@@ -32,12 +33,12 @@ class UserController extends Controller
 		$user=User::find($data['id']);
 		$conyuge1=$user->conyugues[0];
 		$conyuge2=$user->conyugues[1];
-		
+
 		$conyuge1->document=$data['document1'];
         $conyuge1->name=$data['name1'];
         $conyuge1->last_name=$data['last_name1'];
         $conyuge1->gender=$data['gender1'];
-        
+
         $conyuge2->document=$data['document2'];
         $conyuge2->name=$data['name2'];
         $conyuge2->last_name=$data['last_name2'];
@@ -71,5 +72,11 @@ class UserController extends Controller
         $user->save();
 
         return redirect('/');
+	}
+
+	public function mostrarlunamiellugar()
+	{
+		$lunademiel = Lugar::where('type', 'LunaDeMiel')->get();
+		return view('categoria.lunamiel', compact('lunademiel'));
 	}
 }

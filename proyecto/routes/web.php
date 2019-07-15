@@ -1,42 +1,42 @@
 <?php
 //grupo para las rutas de administración
 Route::group(['middleware' => ['auth:admin']], function () {
-	
+
 	//rutas para la gestión de administradores
 	Route::get('/admin/dashboard', function()
 	{
 		return view('admin.layout');
 	})->name('admin.dashboard');
 
-	
+
 	Route::get('/admin/manage/admins', function()
 	{
 		return view('admin.manage_admin.manage');
 	})->name('admin.manage.admins');
 
-	
+
 	Route::get('/admin/manage/create_admin', function()
 	{
 		return view('admin.manage_admin.create');
 	})->name('admin.manage.crear_admin');
 
-	
+
 	Route::post('/admin/manage/create_admin', 'AdminController@createAdmin')->name('admin.manage.crear_admin');
 
-	
+
 	Route::get('/admin/manage/search_admin', 'AdminController@showAdminSearchForm')->name('admin.manage.buscar_admin');
 
-	
+
 	Route::get('/admin/manage/modify/{id}', 'AdminController@showAdminModifyForm')->name('admin.manage.modify');
 
-	
+
 	Route::post('/admin/manage/modify', 'AdminController@modifyAdmin')->name('admi.manage.modify');
-	
-	
+
+
 	Route::get('/admin/manage/delete/{id}', 'AdminController@showAdminDeleteForm')->name('admin.manage.delete');
 
-	
-	Route::get('/admin/manage/delete/confirm/{id}', 'AdminController@deleteAdmin');		
+
+	Route::get('/admin/manage/delete/confirm/{id}', 'AdminController@deleteAdmin');
 
 
 	//rutas para la gestión de usuarios
@@ -150,6 +150,8 @@ Route::group(['middleware' => ['auth:web']], function () {
 
 	Route::post('/profile', 'UserController@profileModify')->name('profile');
 
+
+
 	Route::get('/change_profile_picture', function(){
 		return view('users.change_profile_picture');
 	})->name('change_profile_photo');
@@ -158,10 +160,12 @@ Route::group(['middleware' => ['auth:web']], function () {
 });
 
 
+
+
 //grupo para las rutas de acceso público
 Route::group(['middleware' => ['web']], function () {
 	Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm');
-
+	Route::get("/lunamiel", "UserController@mostrarlunamiellugar")->name('lunamiel');
 	Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login');
 
 	Route::post('/admin/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
@@ -173,8 +177,3 @@ Route::group(['middleware' => ['web']], function () {
 	Auth::routes();
 
 });
-
-
-
-
-
