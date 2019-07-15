@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="https://www.wix.com/favicon.ico" type="image/x-icon">
 
 
-
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
   <meta http-equiv="X-Wix-Meta-Site-Id" content="cbb216d3-b522-434f-9c44-4137b7ff0442">
   <meta http-equiv="X-Wix-Application-Instance-Id" content="be63bd50-68c5-4071-8095-cf705795a78f">
@@ -5366,10 +5366,12 @@
                             <h2 class="font_2" style="font-size:23px;"><span style="color:#FFFFFF;"><span style="letter-spacing:0.1em;"><span style="font-family:libre baskerville,serif;"><span
                                       style="font-size:23px;">{{ $ceremonia->price}}</span></span></span></span></h2>
                           </div>
-                          <div id="comp-jy45hf1w" data-align="center" data-disabled="false" data-margin="0" data-should-use-flex="true" data-width="128" data-height="40" class="style-jy45hf3d1" data-state="desktop shouldUseFlex center"
-                            style="height: 40px; min-height: 19px; width: 128px;">
-                            <div id="comp-jy45hf1wlink" class="g-transparent-a style-jy45hf3d1link"><span id="comp-jy45hf1wlabel" class="style-jy45hf3d1label">Agregar al Carrito</span></div>
-                          </div>
+                          <form action="{{ url('/agregar_al_carro/act_rec')}}" method="POST">
+                            <input type="hidden" name="usuario_id" value="{{ auth()->user()->id }}">
+                            <input type="hidden" name="producto_id" value="{{ $ceremonia->id }}">
+                            <button type="submit" class="btn btn-success">
+                              Agregar al carrito
+                            </button>
                           <div id="nnaz6inlineContent-wedge-4" data-mesh-internal="true"></div>
                         </div>
                       </div>

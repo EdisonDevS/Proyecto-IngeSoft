@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Intervention\Image\Facades\Image as Image;
 use Illuminate\Http\Request;
+use App\User;
 use App\Vestuario;
 use App\Maquillaje;
 use App\Transporte;
@@ -17,7 +18,7 @@ use App\ActividadRecepcion;
 class ProductoController extends Controller
 {
 
-    function crearLugarCeremonia(Request $request)
+    public function crearLugarCeremonia(Request $request)
     {
 
 
@@ -44,7 +45,7 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
-    function crearLugarLunaDeMiel(Request $request)
+    public function crearLugarLunaDeMiel(Request $request)
     {
         $lugar=Lugar::updateOrCreate(['id'=>$request['id']],[
             'name'=>$request['nombre'],
@@ -67,7 +68,7 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
-    function crearLugarRecepcion(Request $request)
+    public function crearLugarRecepcion(Request $request)
     {
         $lugar=Lugar::updateOrCreate(['id'=>$request['id']],[
             'name'=>$request['nombre'],
@@ -90,7 +91,7 @@ class ProductoController extends Controller
     }
 
 
-    function crearRopa(Request $request)
+    public function crearRopa(Request $request)
     {
     	$ropa=Vestuario::updateOrCreate(['id'=>$request['id']],[
             'talla' => $request['talla'],
@@ -110,7 +111,7 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
-    function crearMaquillaje(Request $request)
+    public function crearMaquillaje(Request $request)
     {
     	$maquillaje=Maquillaje::updateOrCreate(['id'=>$request['id']],[
         	'description' => $request['descripcion'],
@@ -131,7 +132,7 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
-    function crearTransporte(Request $request)
+    public function crearTransporte(Request $request)
     {
     	$transporte=Transporte::updateOrCreate(['id'=>$request['id']],[
     		'name' => $request['nombre'],
@@ -154,7 +155,7 @@ class ProductoController extends Controller
     }
 
 
-    function crearCena(Request $request)
+    public function crearCena(Request $request)
     {
     	$cena=Plato::updateOrCreate(['id'=>$request['id']],[
             'name' => $request['nombre'],
@@ -176,7 +177,7 @@ class ProductoController extends Controller
     }
 
 
-    function crearAnillo(Request $request)
+    public function crearAnillo(Request $request)
     {
         $anillo=Anillo::updateOrCreate(['id'=>$request['id']],[
             'talla' => $request['talla'],
@@ -197,7 +198,7 @@ class ProductoController extends Controller
     }
 
 
-    function crearActividadRecepcion(Request $request)
+    public function crearActividadRecepcion(Request $request)
     {
         $actividad=ActividadRecepcion::updateOrCreate(['id'=>$request['id']],[
             'name'=>$request['nombre'],
@@ -219,7 +220,7 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
-    function crearActividadLunaDeMiel(Request $request)
+    public function crearActividadLunaDeMiel(Request $request)
     {
         $actividad=ActividadLunaDeMiel::updateOrCreate(['id'=>$request['id']],[
             'name'=>$request['nombre'],
@@ -240,7 +241,7 @@ class ProductoController extends Controller
     }
 
 
-    function consultarProductos()
+    public function consultarProductos()
     {
         $lugar_ceremonia=Lugar::where('type','Ceremonia')->get();
         $lugar_recepcion=Lugar::where('type','Recepcion')->get();
@@ -269,63 +270,63 @@ class ProductoController extends Controller
     }
 
 
-    function modificarLugarCeremonia($id)
+    public function modificarLugarCeremonia($id)
     {
         $lugar=Lugar::find($id);
         return view('admin.manage_product.modificaciones.modificar_lugar_ceremonia', compact('lugar'));
     }
 
-    function modificarLugarLunaDeMiel($id)
+    public function modificarLugarLunaDeMiel($id)
     {
         $lugar=Lugar::find($id);
         return view('admin.manage_product.modificaciones.modificar_lugar_lm', compact('lugar'));
     }
 
-    function modificarLugarRecepcion($id)
+    public function modificarLugarRecepcion($id)
     {
         $lugar=Lugar::find($id);
         return view('admin.manage_product.modificaciones.modificar_lugar_recepcion', compact('lugar'));
     }
 
-    function modificarTransporte($id)
+    public function modificarTransporte($id)
     {
         $transporte=Transporte::find($id);
         return view('admin.manage_product.modificaciones.modificar_transporte', compact('transporte'));
     }
 
 
-    function modificarPastel($id)
+    public function modificarPastel($id)
     {
         $pastel=Plato::find($id);
         return view('admin.manage_product.modificaciones.modificar_pastel', compact('pastel'));
     }
 
 
-    function modificarVestuario($id)
+    public function modificarVestuario($id)
     {
         $ropa=Vestuario::find($id);
         return view('admin.manage_product.modificaciones.modificar_vestuario', compact('ropa'));
     }
 
-    function modificarMaquillaje($id)
+    public function modificarMaquillaje($id)
     {
         $maquillaje=Maquillaje::find($id);
         return view('admin.manage_product.modificaciones.modificar_maquillaje', compact('maquillaje'));
     }
 
-    function modificarAnillo($id)
+    public function modificarAnillo($id)
     {
         $anillo=Anillo::find($id);
         return view('admin.manage_product.modificaciones.modificar_anillo', compact('anillo'));
     }
 
-    function modificarActividadRecepcion($id)
+    public function modificarActividadRecepcion($id)
     {
         $actividad_recepcion=ActividadRecepcion::find($id);
         return view('admin.manage_product.modificaciones.modificar_actividad_recepcion', compact('actividad_recepcion'));
     }
 
-    function modificarActividadLunaDeMiel($id)
+    public function modificarActividadLunaDeMiel($id)
     {
         $actividad_luna_de_miel=ActividadRecepcion::find($id);
         return view('admin.manage_product.modificaciones.modificar_actividad_luna_de_miel', compact('actividad_luna_de_miel'));
@@ -333,67 +334,151 @@ class ProductoController extends Controller
 
 
 
-    function eliminarLugarCeremonia($id)
+    public function eliminarLugarCeremonia($id)
     {
         Lugar::destroy($id);
         return redirect()->back();
     }
 
-    function eliminarLugarLunaDeMiel($id)
+    public function eliminarLugarLunaDeMiel($id)
     {
         Lugar::destroy($id);
         return redirect()->back();
     }
 
-    function eliminarLugarRecepcion($id)
+    public function eliminarLugarRecepcion($id)
     {
         Lugar::destroy($id);
         return redirect()->back();
     }
 
-    function eliminarTransporte($id)
+    public function eliminarTransporte($id)
     {
         Transporte::destroy($id);
         return redirect()->back();
     }
 
 
-    function eliminarPastel($id)
+    public function eliminarPastel($id)
     {
         Plato::destroy($id);
         return redirect()->back();
     }
 
 
-    function eliminarVestuario($id)
+    public function eliminarVestuario($id)
     {
         Vestuario::destroy($id);
         return redirect()->back();
     }
 
-    function eliminarMaquillaje($id)
+    public function eliminarMaquillaje($id)
     {
         Maquillaje::destroy($id);
         return redirect()->back();
     }
 
-    function eliminarAnillo($id)
+    public function eliminarAnillo($id)
     {
         Anillo::destroy($id);
         return redirect()->back();
     }
 
-    function eliminarActividadRecepcion($id)
+    public function eliminarActividadRecepcion($id)
     {
         ActividadRecepcion::destroy($id);
         return redirect()->back();
     }
 
-    function eliminarActividadLunaDeMiel($id)
+    public function eliminarActividadLunaDeMiel($id)
     {
         ActividadLunaDeMiel::destroy($id);
         return redirect()->back();
     }
+
+
+    public function agregarCarritoAct_LM(Request $request)
+    {
+        $relacion=ac_lm_usuario::create([
+            'user_id' => $request['user_id'],
+            'actividad_luna_de_miel_id' => $request['producto_id'],
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function agregarCarritoAct_REC(Request $request)
+    {
+        $relacion=ac_recep_usuario::create([
+            'user_id' => $request['user_id'],
+            'actividad_recepcion_id' => $request['producto_id'],
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function agregarCarrito_LUGAR(Request $request)
+    {
+        $relacion=lugar_usuario::create([
+            'user_id' => $request['user_id'],
+            'lugar_id' => $request['producto_id'],
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function agregarCarrito_TRANSPORTE(Request $request)
+    {
+       
+        $relacion=transporte_usuario::create([
+            'user_id' => $request['user_id'],
+            'transporte_id' => $request['producto_id'],
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function agregarCarrito_PLATO(Request $request)
+    {
+        
+        $relacion=plato_usuario::create([
+            'user_id' => $request['user_id'],
+            'plato_id' => $request['producto_id'],
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function agregarCarrito_VESTUARIO(Request $request)
+    {
+        $relacion=vestuario_usuario::create([
+            'user_id' => $request['user_id'],
+            'vestuario_id' => $request['producto_id'],
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function agregarCarrito_MAQUILLAJE(Request $request)
+    {
+        $relacion=maquillaje_usuario::create([
+            'user_id' => $request['user_id'],
+            'maquillaje_id' => $request['producto_id'],
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function agregarCarrito_ANILLO(Request $request)
+    {
+        $relacion=anillo_usuario::create([
+            'user_id' => $request['user_id'],
+            'anillo_id' => $request['producto_id'],
+        ]);
+
+        return redirect()->back();
+    }
+
 
 
 

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RelacionActividadLunaDeMiel extends Model
+class lu_ceremonia_usuario extends Model
 {
     //
 }

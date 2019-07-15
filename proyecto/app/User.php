@@ -38,8 +38,43 @@ class User extends Authenticatable
     ];
 
 
-    public function conyugues()
+    public function lugares()
     {
-        return $this->hasMany('App\Conyugue');
+        return $this->belongsToMany('App\lugar_usuario');
+    }
+
+    public function transportes()
+    {
+        return $this->belongsToMany('App\transporte_usuario');
+    }
+
+    public function platos()
+    {
+        return $this->belongsToMany('App\plato_usuario');
+    }
+
+    public function vestuarios()
+    {
+        return $this->belongsToMany('App\vestuario_usuario');
+    }
+
+    public function maquillajes()
+    {
+        return $this->belongsToMany('App\maquillaje_usuario');
+    }
+
+    public function anillos()
+    {
+        return $this->belongsToMany('App\anillo_usuario');
+    }
+
+    public function actividades_recepcion()
+    {
+        return $this->belongsToMany('App\act_recep_usuario');
+    }
+
+    public function actividades_luna_de_miel()
+    {
+        return $this->belongsToMany('App\act_lm_usuario');
     }
 }

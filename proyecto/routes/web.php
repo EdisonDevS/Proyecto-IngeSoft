@@ -256,6 +256,22 @@ Route::group(['middleware' => ['web']], function () {
 		return view('categoria.product_pages.actividad_lunademiel', compact('ceremonia'));
 	});
 
+	Route::post('/agregar_al_carro/act_lm', 'ProductoController@agregarCarritoAct_LM');
+
+	Route::post('/agregar_al_carro/act_rec', 'ProductoController@agregarCarritoAct_REC');
+
+	Route::post('/agregar_al_carro/lugar', 'ProductoController@agregarCarrito_LUGAR');
+
+	Route::post('/agregar_al_carro/transporte', 'ProductoController@agregarCarrito_TRANSPORTE');
+
+	Route::post('/agregar_al_carro/plato', 'ProductoController@agregarCarrito_PLATO');
+
+	Route::post('/agregar_al_carro/vestuario', 'ProductoController@agregarCarrito_VESTUARIO');
+
+	Route::post('/agregar_al_carro/maquillaje', 'ProductoController@agregarCarrito_MAQUILLAJE');
+
+	Route::post('/agregar_al_carro/anillo', 'ProductoController@agregarCarrito_ANILLO');
+
 
 	Auth::routes();
 
