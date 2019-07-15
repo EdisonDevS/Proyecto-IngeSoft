@@ -8,7 +8,7 @@ class act_lm_usuario extends Model
 {
 
 	protected $fillable = [
-        'user_id',
+        'user_id','actividad_luna_de_miel_id'
     ];
 
     public function actividad()

@@ -10,7 +10,7 @@
     <meta name="generator" content="Wix.com Website Builder">
 
 
-
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <meta http-equiv="X-Wix-Meta-Site-Id" content="cbb216d3-b522-434f-9c44-4137b7ff0442">
     <meta http-equiv="X-Wix-Application-Instance-Id" content="be63bd50-68c5-4071-8095-cf705795a78f">
@@ -5468,1144 +5468,141 @@
                                                                     padding-top: calc(100% / (9 / 16));
                                                                 }
                                                             </style>
-                                                            <div data-hook="slider-gallery" data-slider-index="0" class="_2DDgw" style="background-color: transparent;">
-                                                                <div data-hook="slides-container" class="_3e4dm">
-                                                                    <div class="_1X4Gu _3CHZl" style="top: 105px;"><button data-hook="navigation-arrows-left-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M10.978,1.162 C10.978,1.387 10.916,1.612 10.782,1.812 L6.626,8.041 L10.823,14.078 C11.182,14.619 11.036,15.348 10.495,15.707 C9.956,16.068 9.224,15.922 8.865,15.382 L4.235,8.694 C3.971,8.3 3.969,7.786 4.233,7.39 L8.822,0.51 C9.182,-0.032 9.914,-0.178 10.454,0.181 C10.795,0.409 10.978,0.782 10.978,1.162 L10.978,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                    <div class="slick-slider aM2rn slick-initialized">
-                                                                        <div class="slick-list">
-                                                                          <!-- Lugares luna grupo-->
-                                                                          @forelse($lunademiel as $lumiel)
-                                                                            <div class="slick-track" style="width: 230px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
-                                                                                <div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 230px;">
-
-                                                                                    <div>
-                                                                                        <div class="_2cw7M" tabindex="-1" style="width: 100%; display: inline-block;">
-                                                                                            <div data-hook="slider-gallery-slide" style="height: 100%; padding-left: 10px; padding-right: 10px;"><a
-                                                                                                  href="{{ url('/ver_producto/luna_de_miel/'.$luna->id) }}" class="_2zTHN _2AHc6" data-hook="product-item-root" tabindex="0"
-                                                                                                  style="height: 100%;">
-                                                                                                    <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" data-hook="product-item-images" style="">
-                                                                                                        <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                              src={{$lumiel->image}} alt="Italia"></div><button class="_3ezRD"
-                                                                                                          data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                                    </div>
-                                                                                                    <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                                        <h3 class="_2BULo" data-hook="product-item-name">{{$lumiel->name}}</h3>
-                                                                                                        <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                              class="_23ArP">{{$lumiel->price}}</span></div>
-                                                                                                    </div>
-                                                                                                </a></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+                                                            
+                                                                        
+                                                                        <div class="row">
+                                                                            <div class="col col-md-12">
+                                                                                <h1 style="color: white">Lunas de miel<br></h1>
                                                                             </div>
-                                                                          @empty
-                                                                            <h1>Base de datos vacia </h1>
+                                                                            
+                                                                            @forelse($lunademiel as $lumiel)
+                                                                            <div class="card col col-md-4" style="width:400px">
+                                                                              <img class="card-img-top" src="{{'/'.$lumiel->image}}" alt="Card image">
+                                                                              <div class="card-body">
+                                                                                <h4 class="card-title">{{$lumiel->name}}</h4>
+                                                                                <p class="card-text">{{$lumiel->price}}</p>
+                                                                                <a href="{{ url('/ver_producto/luna_de_miel/'.$luna->id) }}" class="btn btn-primary">Ver más</a>
+                                                                              </div>
+                                                                            </div>
+                                                                            @empty
+                                                                            <h1 style="color: white"><br>No hay lunas de miel <br><br></h1>
                                                                           @endforelse
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="_1X4Gu AUCWC" style="top: 105px;"><button data-hook="navigation-arrows-right-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M6.077,1.162 C6.077,1.387 6.139,1.612 6.273,1.812 L10.429,8.041 L6.232,14.078 C5.873,14.619 6.019,15.348 6.56,15.707 C7.099,16.068 7.831,15.922 8.19,15.382 L12.82,8.694 C13.084,8.3 13.086,7.786 12.822,7.39 L8.233,0.51 C7.873,-0.032 7.141,-0.178 6.601,0.181 C6.26,0.409 6.077,0.782 6.077,1.162 L6.077,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="style-jy4epu74" id="comp-jy4epu5f" style="width: 980px;">
-                                                        <div class="comp-jy4epu5f">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.min.css" rel="stylesheet" type="text/css">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.stylable.bundle.css" rel="stylesheet" type="text/css">
-                                                            <style>
-                                                                .comp-jy4epu5f .main-media-slick-hook .slick-dots li button:before {
-                                                                    text-shadow: #414141 0 1px 0, #414141 1px 0 0, #414141 0 -1px 0, #414141 -1px 0 0
-                                                                }
-
-                                                                .comp-jy4epu5f .main-media-slick-hook .slick-dots li.slick-active button:before,
-                                                                .comp-jy4epu5f .main-media-slick-hook .slick-dots li button:focus:before,
-                                                                .comp-jy4epu5f .main-media-slick-hook .slick-dots li button:hover:before {
-                                                                    color: #414141
-                                                                }
-
-                                                                .comp-jy4epu5f ._3uack {
-                                                                    --gallery_priceColor: #999997;
-                                                                    --gallery_priceFontStyle: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: rgb(255, 255, 255);
-                                                                    font: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4epu5f ._3uack ._23IPr {
-                                                                    margin-right: 10px
-                                                                }
-
-                                                                .comp-jy4epu5f ._3DJ-f {
-                                                                    --gallery_outOfStockTextColor: #663898;
-                                                                    color: #663898;
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4epu5f ._2zTHN {
-                                                                    --gallery_productBackground: rgba(0, 0, 0, 0);
-                                                                    --gallery_borderWidth: 0;
-                                                                    --gallery_borderColor: #414141;
-                                                                    background-color: rgba(0, 0, 0, 0);
-                                                                    border: 0px solid #414141
-                                                                }
-
-                                                                .comp-jy4epu5f ._2zTHN .mxMP4 {
-                                                                    --gallery_ribbonBackground: #9BCB6C;
-                                                                    background-color: #9BCB6C;
-                                                                    left: 0;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif
-                                                                }
-
-                                                                .comp-jy4epu5f ._2zTHN ._3ezRD {
-                                                                    --gallery_quickViewTextColor: #000000;
-                                                                    --gallery_quickViewBackground: rgba(255, 255, 255, 0.75);
-                                                                    --gallery_quickViewTextFontStyle: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: #000000;
-                                                                    background-color: rgba(255, 255, 255, 0.75);
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4epu5f ._2zTHN ._3RqKm {
-                                                                    --gallery_productMargin: 0;
-                                                                    --gallery_alignment: left;
-                                                                    padding: 15px 0px 0px;
-                                                                    text-align: left
-                                                                }
-
-                                                                .comp-jy4epu5f ._2zTHN ._3RqKm ._2BULo {
-                                                                    --gallery_titleFontStyle: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    --gallery_titleTextColor: #414141;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration: ;
-                                                                    color: rgb(255, 255, 255)
-                                                                }
-
-                                                                .comp-jy4epu5f ._2zTHN ._3RqKm ._11uJt {
-                                                                    --gallery_dividerColor: #414141;
-                                                                    --gallery_dividerWidth: 1;
-                                                                    --gallery_dividerLength: 20;
-                                                                    border-color: #414141;
-                                                                    border-bottom-width: 1px;
-                                                                    width: 20px
-                                                                }
-
-                                                                .comp-jy4epu5f ._1WPzN {
-                                                                    right: 10px
-                                                                }
-
-                                                                .comp-jy4epu5f ._3-5SE ._2MTGu {
-                                                                    background-color: #414141;
-                                                                    color: #FFFFFF
-                                                                }
-
-                                                                .comp-jy4epu5f ._2c0wg {
-                                                                    text-align: start;
-                                                                    color: #414141;
-                                                                    font: normal normal normal 25px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-                                                            </style>
-                                                            <style>
-                                                                /* must use this as inline so we will have this style on first paint */
-                                                                .edgeFixPaddingTop:before {
-                                                                    content: "";
-                                                                    display: block;
-                                                                }
-
-                                                                .edgeFixPaddingTop0:before {
-                                                                    padding-top: calc(100% / (3 / 2));
-                                                                }
-
-                                                                .edgeFixPaddingTop1:before {
-                                                                    padding-top: calc(100% / (4 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop2:before {
-                                                                    padding-top: calc(100%);
-                                                                }
-
-                                                                .edgeFixPaddingTop3:before {
-                                                                    padding-top: calc(100% / (3 / 4));
-                                                                }
-
-                                                                .edgeFixPaddingTop4:before {
-                                                                    padding-top: calc(100% / (2 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop5:before {
-                                                                    padding-top: calc(100% / (16 / 9));
-                                                                }
-
-                                                                .edgeFixPaddingTop6:before {
-                                                                    padding-top: calc(100% / (9 / 16));
-                                                                }
-                                                            </style>
-                                                            <div data-hook="slider-gallery" data-slider-index="0" class="_2DDgw" style="background-color: transparent;">
-                                                                <div data-hook="slides-container" class="_3e4dm">
-                                                                    <div class="_1X4Gu _3CHZl" style="top: 105px;"><button data-hook="navigation-arrows-left-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M10.978,1.162 C10.978,1.387 10.916,1.612 10.782,1.812 L6.626,8.041 L10.823,14.078 C11.182,14.619 11.036,15.348 10.495,15.707 C9.956,16.068 9.224,15.922 8.865,15.382 L4.235,8.694 C3.971,8.3 3.969,7.786 4.233,7.39 L8.822,0.51 C9.182,-0.032 9.914,-0.178 10.454,0.181 C10.795,0.409 10.978,0.782 10.978,1.162 L10.978,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                    <!--Ceremonias grupo -->
-                                                                    <div class="slick-slider aM2rn slick-initialized">
-                                                                        <div class="slick-list">
-                                                                          @forelse ($ceremonias as $ceremonia)
-                                                                            <div class="slick-track" style="width: 230px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
-                                                                                <div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 230px;">
-                                                                                    <div>
-                                                                                        <div class="_2cw7M" tabindex="-1" style="width: 100%; display: inline-block;">
-                                                                                            <div data-hook="slider-gallery-slide" style="height: 100%; padding-left: 10px; padding-right: 10px;"><a
-                                                                                                  href="{{ url('/ver_producto/ceremonia/'.$ceremonia->id) }}" class="_2zTHN _2AHc6" data-hook="product-item-root" tabindex="0"
-                                                                                                  style="height: 100%;">
-                                                                                                    <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" data-hook="product-item-images" style="">
-                                                                                                        <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                              src= {{ $ceremoia->image }} alt="Satánica"></div><button class="_3ezRD"
-                                                                                                          data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                                    </div>
-                                                                                                    <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                                        <h3 class="_2BULo" data-hook="product-item-name">{{$ceremoia->name}}</h3>
-                                                                                                        <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                              class="_23ArP">{{$ceremoia->price}}</span></div>
-                                                                                                    </div>
-                                                                                                </a></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                                                                                
+                                                                    <div class="row">
+                                                                        <div class="col col-md-12">
+                                                                            <h1 style="color: white">Ceremonias<br></h1>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="_1X4Gu AUCWC" style="top: 105px;"><button data-hook="navigation-arrows-right-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M6.077,1.162 C6.077,1.387 6.139,1.612 6.273,1.812 L10.429,8.041 L6.232,14.078 C5.873,14.619 6.019,15.348 6.56,15.707 C7.099,16.068 7.831,15.922 8.19,15.382 L12.82,8.694 C13.084,8.3 13.086,7.786 12.822,7.39 L8.233,0.51 C7.873,-0.032 7.141,-0.178 6.601,0.181 C6.26,0.409 6.077,0.782 6.077,1.162 L6.077,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="style-jy4epu74" id="comp-jy4eu4pp" style="width: 980px;">
-                                                        <div class="comp-jy4eu4pp">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.min.css" rel="stylesheet" type="text/css">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.stylable.bundle.css" rel="stylesheet" type="text/css">
-                                                            <style>
-                                                                .comp-jy4eu4pp .main-media-slick-hook .slick-dots li button:before {
-                                                                    text-shadow: #414141 0 1px 0, #414141 1px 0 0, #414141 0 -1px 0, #414141 -1px 0 0
-                                                                }
-
-                                                                .comp-jy4eu4pp .main-media-slick-hook .slick-dots li.slick-active button:before,
-                                                                .comp-jy4eu4pp .main-media-slick-hook .slick-dots li button:focus:before,
-                                                                .comp-jy4eu4pp .main-media-slick-hook .slick-dots li button:hover:before {
-                                                                    color: #414141
-                                                                }
-
-                                                                .comp-jy4eu4pp ._3uack {
-                                                                    --gallery_priceColor: #999997;
-                                                                    --gallery_priceFontStyle: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: rgb(255, 255, 255);
-                                                                    font: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4eu4pp ._3uack ._23IPr {
-                                                                    margin-right: 10px
-                                                                }
-
-                                                                .comp-jy4eu4pp ._3DJ-f {
-                                                                    --gallery_outOfStockTextColor: #663898;
-                                                                    color: #663898;
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4eu4pp ._2zTHN {
-                                                                    --gallery_productBackground: rgba(0, 0, 0, 0);
-                                                                    --gallery_borderWidth: 0;
-                                                                    --gallery_borderColor: #414141;
-                                                                    background-color: rgba(0, 0, 0, 0);
-                                                                    border: 0px solid #414141
-                                                                }
-
-                                                                .comp-jy4eu4pp ._2zTHN .mxMP4 {
-                                                                    --gallery_ribbonBackground: #9BCB6C;
-                                                                    background-color: #9BCB6C;
-                                                                    left: 0;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif
-                                                                }
-
-                                                                .comp-jy4eu4pp ._2zTHN ._3ezRD {
-                                                                    --gallery_quickViewTextColor: #000000;
-                                                                    --gallery_quickViewBackground: rgba(255, 255, 255, 0.75);
-                                                                    --gallery_quickViewTextFontStyle: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: #000000;
-                                                                    background-color: rgba(255, 255, 255, 0.75);
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4eu4pp ._2zTHN ._3RqKm {
-                                                                    --gallery_productMargin: 0;
-                                                                    --gallery_alignment: left;
-                                                                    padding: 15px 0px 0px;
-                                                                    text-align: left
-                                                                }
-
-                                                                .comp-jy4eu4pp ._2zTHN ._3RqKm ._2BULo {
-                                                                    --gallery_titleFontStyle: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    --gallery_titleTextColor: #414141;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration: ;
-                                                                    color: rgb(255, 255, 255)
-                                                                }
-
-                                                                .comp-jy4eu4pp ._2zTHN ._3RqKm ._11uJt {
-                                                                    --gallery_dividerColor: #414141;
-                                                                    --gallery_dividerWidth: 1;
-                                                                    --gallery_dividerLength: 20;
-                                                                    border-color: #414141;
-                                                                    border-bottom-width: 1px;
-                                                                    width: 20px
-                                                                }
-
-                                                                .comp-jy4eu4pp ._1WPzN {
-                                                                    right: 10px
-                                                                }
-
-                                                                .comp-jy4eu4pp ._3-5SE ._2MTGu {
-                                                                    background-color: #414141;
-                                                                    color: #FFFFFF
-                                                                }
-
-                                                                .comp-jy4eu4pp ._2c0wg {
-                                                                    text-align: start;
-                                                                    color: #414141;
-                                                                    font: normal normal normal 25px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-                                                            </style>
-                                                            <style>
-                                                                /* must use this as inline so we will have this style on first paint */
-                                                                .edgeFixPaddingTop:before {
-                                                                    content: "";
-                                                                    display: block;
-                                                                }
-
-                                                                .edgeFixPaddingTop0:before {
-                                                                    padding-top: calc(100% / (3 / 2));
-                                                                }
-
-                                                                .edgeFixPaddingTop1:before {
-                                                                    padding-top: calc(100% / (4 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop2:before {
-                                                                    padding-top: calc(100%);
-                                                                }
-
-                                                                .edgeFixPaddingTop3:before {
-                                                                    padding-top: calc(100% / (3 / 4));
-                                                                }
-
-                                                                .edgeFixPaddingTop4:before {
-                                                                    padding-top: calc(100% / (2 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop5:before {
-                                                                    padding-top: calc(100% / (16 / 9));
-                                                                }
-
-                                                                .edgeFixPaddingTop6:before {
-                                                                    padding-top: calc(100% / (9 / 16));
-                                                                }
-                                                            </style>
-                                                            <div data-hook="slider-gallery" data-slider-index="0" class="_2DDgw" style="background-color: transparent;">
-                                                                <div data-hook="slides-container" class="_3e4dm">
-                                                                    <div class="_1X4Gu _3CHZl" style="top: 105px;"><button data-hook="navigation-arrows-left-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M10.978,1.162 C10.978,1.387 10.916,1.612 10.782,1.812 L6.626,8.041 L10.823,14.078 C11.182,14.619 11.036,15.348 10.495,15.707 C9.956,16.068 9.224,15.922 8.865,15.382 L4.235,8.694 C3.971,8.3 3.969,7.786 4.233,7.39 L8.822,0.51 C9.182,-0.032 9.914,-0.178 10.454,0.181 C10.795,0.409 10.978,0.782 10.978,1.162 L10.978,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                    <!-- Actividad recepcion--->
-                                                                    <div class="slick-slider aM2rn slick-initialized">
-                                                                        <div class="slick-list">
-                                                                          @forelse($recepciones as $recepcion)
-                                                                            <div class="slick-track" style="width: 230px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
-                                                                                <div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 230px;">
-                                                                                    <div>
-                                                                                        <div class="_2cw7M" tabindex="-1" style="width: 100%; display: inline-block;">
-                                                                                            <div data-hook="slider-gallery-slide" style="height: 100%; padding-left: 10px; padding-right: 10px;"><a
-                                                                                                  href="{{url('/ver_producto/actividad_recepcion/'.$rep->id)}}" class="_2zTHN _2AHc6" data-hook="product-item-root" tabindex="0"
-                                                                                                  style="height: 100%;">
-                                                                                                    <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" data-hook="product-item-images" style="">
-                                                                                                        <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                              src={{$recepcion->image}} alt="Clasica"></div><button class="_3ezRD"
-                                                                                                          data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                                    </div>
-                                                                                                    <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                                        <h3 class="_2BULo" data-hook="product-item-name">{{$recepcion->name}}</h3>
-                                                                                                        <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                              class="_23ArP">{{$recepcion->price}}</span></div>
-                                                                                                    </div>
-                                                                                                </a></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+                                                                        
+                                                                            @forelse($ceremonias as $ceremonia)
+                                                                            <div class="card col col-md-4" style="width:400px">
+                                                                              <img class="card-img-top" src="{{ '/'.$ceremonia->image }}" alt="Card image">
+                                                                              <div class="card-body">
+                                                                                <h4 class="card-title">{{$ceremonia->name}}</h4>
+                                                                                <p class="card-text">{{$ceremonia->price}}</p>
+                                                                                <a href="{{ url('/ver_producto/ceremonia/'.$ceremonia->id) }}" class="btn btn-primary">Ver más</a>
+                                                                              </div>
                                                                             </div>
-                                                                          @empty
-                                                                            <h1> Base de Datos vacia </h1>
+                                                                            @empty
+                                                                            <h1 style="color: white"><br>No hay ceremonias <br><br></h1>
                                                                           @endforelse
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="_1X4Gu AUCWC" style="top: 105px;"><button data-hook="navigation-arrows-right-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M6.077,1.162 C6.077,1.387 6.139,1.612 6.273,1.812 L10.429,8.041 L6.232,14.078 C5.873,14.619 6.019,15.348 6.56,15.707 C7.099,16.068 7.831,15.922 8.19,15.382 L12.82,8.694 C13.084,8.3 13.086,7.786 12.822,7.39 L8.233,0.51 C7.873,-0.032 7.141,-0.178 6.601,0.181 C6.26,0.409 6.077,0.782 6.077,1.162 L6.077,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="style-jy4epu74" id="comp-jy4eve3o" style="width: 980px;">
-                                                        <div class="comp-jy4eve3o">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.min.css" rel="stylesheet" type="text/css">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.stylable.bundle.css" rel="stylesheet" type="text/css">
-                                                            <style>
-                                                                .comp-jy4eve3o .main-media-slick-hook .slick-dots li button:before {
-                                                                    text-shadow: #414141 0 1px 0, #414141 1px 0 0, #414141 0 -1px 0, #414141 -1px 0 0
-                                                                }
 
-                                                                .comp-jy4eve3o .main-media-slick-hook .slick-dots li.slick-active button:before,
-                                                                .comp-jy4eve3o .main-media-slick-hook .slick-dots li button:focus:before,
-                                                                .comp-jy4eve3o .main-media-slick-hook .slick-dots li button:hover:before {
-                                                                    color: #414141
-                                                                }
-
-                                                                .comp-jy4eve3o ._3uack {
-                                                                    --gallery_priceColor: #999997;
-                                                                    --gallery_priceFontStyle: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: rgb(255, 255, 255);
-                                                                    font: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4eve3o ._3uack ._23IPr {
-                                                                    margin-right: 10px
-                                                                }
-
-                                                                .comp-jy4eve3o ._3DJ-f {
-                                                                    --gallery_outOfStockTextColor: #663898;
-                                                                    color: #663898;
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4eve3o ._2zTHN {
-                                                                    --gallery_productBackground: rgba(0, 0, 0, 0);
-                                                                    --gallery_borderWidth: 0;
-                                                                    --gallery_borderColor: #414141;
-                                                                    background-color: rgba(0, 0, 0, 0);
-                                                                    border: 0px solid #414141
-                                                                }
-
-                                                                .comp-jy4eve3o ._2zTHN .mxMP4 {
-                                                                    --gallery_ribbonBackground: #9BCB6C;
-                                                                    background-color: #9BCB6C;
-                                                                    left: 0;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif
-                                                                }
-
-                                                                .comp-jy4eve3o ._2zTHN ._3ezRD {
-                                                                    --gallery_quickViewTextColor: #000000;
-                                                                    --gallery_quickViewBackground: rgba(255, 255, 255, 0.75);
-                                                                    --gallery_quickViewTextFontStyle: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: #000000;
-                                                                    background-color: rgba(255, 255, 255, 0.75);
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4eve3o ._2zTHN ._3RqKm {
-                                                                    --gallery_productMargin: 0;
-                                                                    --gallery_alignment: left;
-                                                                    padding: 15px 0px 0px;
-                                                                    text-align: left
-                                                                }
-
-                                                                .comp-jy4eve3o ._2zTHN ._3RqKm ._2BULo {
-                                                                    --gallery_titleFontStyle: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    --gallery_titleTextColor: #414141;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration: ;
-                                                                    color: rgb(255, 255, 255)
-                                                                }
-
-                                                                .comp-jy4eve3o ._2zTHN ._3RqKm ._11uJt {
-                                                                    --gallery_dividerColor: #414141;
-                                                                    --gallery_dividerWidth: 1;
-                                                                    --gallery_dividerLength: 20;
-                                                                    border-color: #414141;
-                                                                    border-bottom-width: 1px;
-                                                                    width: 20px
-                                                                }
-
-                                                                .comp-jy4eve3o ._1WPzN {
-                                                                    right: 10px
-                                                                }
-
-                                                                .comp-jy4eve3o ._3-5SE ._2MTGu {
-                                                                    background-color: #414141;
-                                                                    color: #FFFFFF
-                                                                }
-
-                                                                .comp-jy4eve3o ._2c0wg {
-                                                                    text-align: start;
-                                                                    color: #414141;
-                                                                    font: normal normal normal 25px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-                                                            </style>
-                                                            <style>
-                                                                /* must use this as inline so we will have this style on first paint */
-                                                                .edgeFixPaddingTop:before {
-                                                                    content: "";
-                                                                    display: block;
-                                                                }
-
-                                                                .edgeFixPaddingTop0:before {
-                                                                    padding-top: calc(100% / (3 / 2));
-                                                                }
-
-                                                                .edgeFixPaddingTop1:before {
-                                                                    padding-top: calc(100% / (4 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop2:before {
-                                                                    padding-top: calc(100%);
-                                                                }
-
-                                                                .edgeFixPaddingTop3:before {
-                                                                    padding-top: calc(100% / (3 / 4));
-                                                                }
-
-                                                                .edgeFixPaddingTop4:before {
-                                                                    padding-top: calc(100% / (2 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop5:before {
-                                                                    padding-top: calc(100% / (16 / 9));
-                                                                }
-
-                                                                .edgeFixPaddingTop6:before {
-                                                                    padding-top: calc(100% / (9 / 16));
-                                                                }
-                                                            </style>
-                                                            <div data-hook="slider-gallery" data-slider-index="0" class="_2DDgw" style="background-color: transparent;">
-                                                                <div data-hook="slides-container" class="_3e4dm">
-                                                                    <div class="_1X4Gu _3CHZl" style="top: 105px;"><button data-hook="navigation-arrows-left-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M10.978,1.162 C10.978,1.387 10.916,1.612 10.782,1.812 L6.626,8.041 L10.823,14.078 C11.182,14.619 11.036,15.348 10.495,15.707 C9.956,16.068 9.224,15.922 8.865,15.382 L4.235,8.694 C3.971,8.3 3.969,7.786 4.233,7.39 L8.822,0.51 C9.182,-0.032 9.914,-0.178 10.454,0.181 C10.795,0.409 10.978,0.782 10.978,1.162 L10.978,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                    <!-- Anillos grupo -->
-                                                                    <div class="slick-slider aM2rn slick-initialized">
-                                                                        <div class="slick-list">
-                                                                          @forelse ($anillos as $anillo)
-                                                                            <div class="slick-track" style="width: 230px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
-                                                                                <div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 230px;">
-                                                                                    <div>
-                                                                                        <div class="_2cw7M" tabindex="-1" style="width: 100%; display: inline-block;">
-                                                                                            <div data-hook="slider-gallery-slide" style="height: 100%; padding-left: 10px; padding-right: 10px;"><a
-                                                                                                  href="{{ url('/ver_producto/anillos/'.$anillo->id) }}" class="_2zTHN _2AHc6" data-hook="product-item-root" tabindex="0"
-                                                                                                  style="height: 100%;">
-                                                                                                    <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" data-hook="product-item-images" style="">
-                                                                                                        <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                              src={{$anillo->image}} alt="Iran"></div><button class="_3ezRD"
-                                                                                                          data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                                    </div>
-                                                                                                    <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                                        <h3 class="_2BULo" data-hook="product-item-name">{{$anillo->name}}</h3>
-                                                                                                        <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                              class="_23ArP">{{$anillo->price}}</span></div>
-                                                                                                    </div>
-                                                                                                </a></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                                                                        <div class="row">
+                                                                        <div class="col col-md-12">
+                                                                            <h1 style="color: white">Recepciones<br></h1>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="_1X4Gu AUCWC" style="top: 105px;"><button data-hook="navigation-arrows-right-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M6.077,1.162 C6.077,1.387 6.139,1.612 6.273,1.812 L10.429,8.041 L6.232,14.078 C5.873,14.619 6.019,15.348 6.56,15.707 C7.099,16.068 7.831,15.922 8.19,15.382 L12.82,8.694 C13.084,8.3 13.086,7.786 12.822,7.39 L8.233,0.51 C7.873,-0.032 7.141,-0.178 6.601,0.181 C6.26,0.409 6.077,0.782 6.077,1.162 L6.077,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="style-jy4epu74" id="comp-jy4eskpc" style="width: 980px;">
-                                                        <div class="comp-jy4eskpc">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.min.css" rel="stylesheet" type="text/css">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.stylable.bundle.css" rel="stylesheet" type="text/css">
-                                                            <style>
-                                                                .comp-jy4eskpc .main-media-slick-hook .slick-dots li button:before {
-                                                                    text-shadow: #414141 0 1px 0, #414141 1px 0 0, #414141 0 -1px 0, #414141 -1px 0 0
-                                                                }
-
-                                                                .comp-jy4eskpc .main-media-slick-hook .slick-dots li.slick-active button:before,
-                                                                .comp-jy4eskpc .main-media-slick-hook .slick-dots li button:focus:before,
-                                                                .comp-jy4eskpc .main-media-slick-hook .slick-dots li button:hover:before {
-                                                                    color: #414141
-                                                                }
-
-                                                                .comp-jy4eskpc ._3uack {
-                                                                    --gallery_priceColor: #999997;
-                                                                    --gallery_priceFontStyle: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: rgb(255, 255, 255);
-                                                                    font: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4eskpc ._3uack ._23IPr {
-                                                                    margin-right: 10px
-                                                                }
-
-                                                                .comp-jy4eskpc ._3DJ-f {
-                                                                    --gallery_outOfStockTextColor: #663898;
-                                                                    color: #663898;
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4eskpc ._2zTHN {
-                                                                    --gallery_productBackground: rgba(0, 0, 0, 0);
-                                                                    --gallery_borderWidth: 0;
-                                                                    --gallery_borderColor: #414141;
-                                                                    background-color: rgba(0, 0, 0, 0);
-                                                                    border: 0px solid #414141
-                                                                }
-
-                                                                .comp-jy4eskpc ._2zTHN .mxMP4 {
-                                                                    --gallery_ribbonBackground: #9BCB6C;
-                                                                    background-color: #9BCB6C;
-                                                                    left: 0;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif
-                                                                }
-
-                                                                .comp-jy4eskpc ._2zTHN ._3ezRD {
-                                                                    --gallery_quickViewTextColor: #000000;
-                                                                    --gallery_quickViewBackground: rgba(255, 255, 255, 0.75);
-                                                                    --gallery_quickViewTextFontStyle: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: #000000;
-                                                                    background-color: rgba(255, 255, 255, 0.75);
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4eskpc ._2zTHN ._3RqKm {
-                                                                    --gallery_productMargin: 0;
-                                                                    --gallery_alignment: left;
-                                                                    padding: 15px 0px 0px;
-                                                                    text-align: left
-                                                                }
-
-                                                                .comp-jy4eskpc ._2zTHN ._3RqKm ._2BULo {
-                                                                    --gallery_titleFontStyle: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    --gallery_titleTextColor: #414141;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration: ;
-                                                                    color: rgb(255, 255, 255)
-                                                                }
-
-                                                                .comp-jy4eskpc ._2zTHN ._3RqKm ._11uJt {
-                                                                    --gallery_dividerColor: #414141;
-                                                                    --gallery_dividerWidth: 1;
-                                                                    --gallery_dividerLength: 20;
-                                                                    border-color: #414141;
-                                                                    border-bottom-width: 1px;
-                                                                    width: 20px
-                                                                }
-
-                                                                .comp-jy4eskpc ._1WPzN {
-                                                                    right: 10px
-                                                                }
-
-                                                                .comp-jy4eskpc ._3-5SE ._2MTGu {
-                                                                    background-color: #414141;
-                                                                    color: #FFFFFF
-                                                                }
-
-                                                                .comp-jy4eskpc ._2c0wg {
-                                                                    text-align: start;
-                                                                    color: #414141;
-                                                                    font: normal normal normal 25px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-                                                            </style>
-                                                            <style>
-                                                                /* must use this as inline so we will have this style on first paint */
-                                                                .edgeFixPaddingTop:before {
-                                                                    content: "";
-                                                                    display: block;
-                                                                }
-
-                                                                .edgeFixPaddingTop0:before {
-                                                                    padding-top: calc(100% / (3 / 2));
-                                                                }
-
-                                                                .edgeFixPaddingTop1:before {
-                                                                    padding-top: calc(100% / (4 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop2:before {
-                                                                    padding-top: calc(100%);
-                                                                }
-
-                                                                .edgeFixPaddingTop3:before {
-                                                                    padding-top: calc(100% / (3 / 4));
-                                                                }
-
-                                                                .edgeFixPaddingTop4:before {
-                                                                    padding-top: calc(100% / (2 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop5:before {
-                                                                    padding-top: calc(100% / (16 / 9));
-                                                                }
-
-                                                                .edgeFixPaddingTop6:before {
-                                                                    padding-top: calc(100% / (9 / 16));
-                                                                }
-                                                            </style>
-                                                            <div data-hook="slider-gallery" data-slider-index="0" class="_2DDgw" style="background-color: transparent;">
-                                                                <div data-hook="slides-container" class="_3e4dm">
-                                                                    <div class="_1X4Gu _3CHZl" style="top: 105px;"><button data-hook="navigation-arrows-left-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M10.978,1.162 C10.978,1.387 10.916,1.612 10.782,1.812 L6.626,8.041 L10.823,14.078 C11.182,14.619 11.036,15.348 10.495,15.707 C9.956,16.068 9.224,15.922 8.865,15.382 L4.235,8.694 C3.971,8.3 3.969,7.786 4.233,7.39 L8.822,0.51 C9.182,-0.032 9.914,-0.178 10.454,0.181 C10.795,0.409 10.978,0.782 10.978,1.162 L10.978,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                    <!-- Pasteles grupo-->
-                                                                    <div class="slick-slider aM2rn slick-initialized">
-                                                                        <div class="slick-list">
-                                                                          @forelse ($pasteles as $pastel)
-                                                                            <div class="slick-track" style="width: 230px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
-                                                                                <div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 230px;">
-                                                                                    <div>
-                                                                                        <div class="_2cw7M" tabindex="-1" style="width: 100%; display: inline-block;">
-                                                                                            <div data-hook="slider-gallery-slide" style="height: 100%; padding-left: 10px; padding-right: 10px;"><a
-                                                                                                  href="{{url('/ver_producto/pastel/'.$pastel->id)}}"class="_2zTHN _2AHc6" data-hook="product-item-root" tabindex="0"
-                                                                                                  style="height: 100%;">
-                                                                                                    <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" data-hook="product-item-images" style="">
-                                                                                                        <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                              src={{ $pastel->image}} alt="Mofin"></div><button class="_3ezRD"
-                                                                                                          data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                                    </div>
-                                                                                                    <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                                        <h3 class="_2BULo" data-hook="product-item-name">{{$pastel->name}}</h3>
-                                                                                                        <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                              class="_23ArP">{{$pastel->price}}</span></div>
-                                                                                                    </div>
-                                                                                                </a></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+                                                                        
+                                                                            @forelse($recepciones as $recepcion)
+                                                                            <div class="card col col-md-4" style="width:400px">
+                                                                              <img class="card-img-top" src="{{ '/'.$recepcion->image }}" alt="Card image">
+                                                                              <div class="card-body">
+                                                                                <h4 class="card-title">{{$recepcion->name}}</h4>
+                                                                                <p class="card-text">{{$recepcion->price}}</p>
+                                                                                <a href="{{url('/ver_producto/actividad_recepcion/'.$recepcion->id)}}" class="btn btn-primary">Ver más</a>
+                                                                              </div>
                                                                             </div>
-                                                                          @empty
-                                                                            <h1> base de datos vacia </h1>
+                                                                            @empty
+                                                                            <h1 style="color: white"><br>No hay recepciones <br><br></h1>
                                                                           @endforelse
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="_1X4Gu AUCWC" style="top: 105px;"><button data-hook="navigation-arrows-right-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M6.077,1.162 C6.077,1.387 6.139,1.612 6.273,1.812 L10.429,8.041 L6.232,14.078 C5.873,14.619 6.019,15.348 6.56,15.707 C7.099,16.068 7.831,15.922 8.19,15.382 L12.82,8.694 C13.084,8.3 13.086,7.786 12.822,7.39 L8.233,0.51 C7.873,-0.032 7.141,-0.178 6.601,0.181 C6.26,0.409 6.077,0.782 6.077,1.162 L6.077,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="style-jy4epu74" id="comp-jy4f3p1e" style="width: 980px;">
-                                                        <div class="comp-jy4f3p1e">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.min.css" rel="stylesheet" type="text/css">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.stylable.bundle.css" rel="stylesheet" type="text/css">
-                                                            <style>
-                                                                .comp-jy4f3p1e .main-media-slick-hook .slick-dots li button:before {
-                                                                    text-shadow: #414141 0 1px 0, #414141 1px 0 0, #414141 0 -1px 0, #414141 -1px 0 0
-                                                                }
 
-                                                                .comp-jy4f3p1e .main-media-slick-hook .slick-dots li.slick-active button:before,
-                                                                .comp-jy4f3p1e .main-media-slick-hook .slick-dots li button:focus:before,
-                                                                .comp-jy4f3p1e .main-media-slick-hook .slick-dots li button:hover:before {
-                                                                    color: #414141
-                                                                }
-
-                                                                .comp-jy4f3p1e ._3uack {
-                                                                    --gallery_priceColor: #999997;
-                                                                    --gallery_priceFontStyle: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: rgb(255, 255, 255);
-                                                                    font: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4f3p1e ._3uack ._23IPr {
-                                                                    margin-right: 10px
-                                                                }
-
-                                                                .comp-jy4f3p1e ._3DJ-f {
-                                                                    --gallery_outOfStockTextColor: #663898;
-                                                                    color: #663898;
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4f3p1e ._2zTHN {
-                                                                    --gallery_productBackground: rgba(0, 0, 0, 0);
-                                                                    --gallery_borderWidth: 0;
-                                                                    --gallery_borderColor: #414141;
-                                                                    background-color: rgba(0, 0, 0, 0);
-                                                                    border: 0px solid #414141
-                                                                }
-
-                                                                .comp-jy4f3p1e ._2zTHN .mxMP4 {
-                                                                    --gallery_ribbonBackground: #9BCB6C;
-                                                                    background-color: #9BCB6C;
-                                                                    left: 0;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif
-                                                                }
-
-                                                                .comp-jy4f3p1e ._2zTHN ._3ezRD {
-                                                                    --gallery_quickViewTextColor: #000000;
-                                                                    --gallery_quickViewBackground: rgba(255, 255, 255, 0.75);
-                                                                    --gallery_quickViewTextFontStyle: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: #000000;
-                                                                    background-color: rgba(255, 255, 255, 0.75);
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4f3p1e ._2zTHN ._3RqKm {
-                                                                    --gallery_productMargin: 0;
-                                                                    --gallery_alignment: left;
-                                                                    padding: 15px 0px 0px;
-                                                                    text-align: left
-                                                                }
-
-                                                                .comp-jy4f3p1e ._2zTHN ._3RqKm ._2BULo {
-                                                                    --gallery_titleFontStyle: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    --gallery_titleTextColor: #414141;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration: ;
-                                                                    color: rgb(255, 255, 255)
-                                                                }
-
-                                                                .comp-jy4f3p1e ._2zTHN ._3RqKm ._11uJt {
-                                                                    --gallery_dividerColor: #414141;
-                                                                    --gallery_dividerWidth: 1;
-                                                                    --gallery_dividerLength: 20;
-                                                                    border-color: #414141;
-                                                                    border-bottom-width: 1px;
-                                                                    width: 20px
-                                                                }
-
-                                                                .comp-jy4f3p1e ._1WPzN {
-                                                                    right: 10px
-                                                                }
-
-                                                                .comp-jy4f3p1e ._3-5SE ._2MTGu {
-                                                                    background-color: #414141;
-                                                                    color: #FFFFFF
-                                                                }
-
-                                                                .comp-jy4f3p1e ._2c0wg {
-                                                                    text-align: start;
-                                                                    color: #414141;
-                                                                    font: normal normal normal 25px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-                                                            </style>
-                                                            <style>
-                                                                /* must use this as inline so we will have this style on first paint */
-                                                                .edgeFixPaddingTop:before {
-                                                                    content: "";
-                                                                    display: block;
-                                                                }
-
-                                                                .edgeFixPaddingTop0:before {
-                                                                    padding-top: calc(100% / (3 / 2));
-                                                                }
-
-                                                                .edgeFixPaddingTop1:before {
-                                                                    padding-top: calc(100% / (4 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop2:before {
-                                                                    padding-top: calc(100%);
-                                                                }
-
-                                                                .edgeFixPaddingTop3:before {
-                                                                    padding-top: calc(100% / (3 / 4));
-                                                                }
-
-                                                                .edgeFixPaddingTop4:before {
-                                                                    padding-top: calc(100% / (2 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop5:before {
-                                                                    padding-top: calc(100% / (16 / 9));
-                                                                }
-
-                                                                .edgeFixPaddingTop6:before {
-                                                                    padding-top: calc(100% / (9 / 16));
-                                                                }
-                                                            </style>
-                                                            <div data-hook="slider-gallery" data-slider-index="0" class="_2DDgw" style="background-color: transparent;">
-                                                                <div data-hook="slides-container" class="_3e4dm">
-                                                                    <div class="_1X4Gu _3CHZl" style="top: 105px;"><button data-hook="navigation-arrows-left-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M10.978,1.162 C10.978,1.387 10.916,1.612 10.782,1.812 L6.626,8.041 L10.823,14.078 C11.182,14.619 11.036,15.348 10.495,15.707 C9.956,16.068 9.224,15.922 8.865,15.382 L4.235,8.694 C3.971,8.3 3.969,7.786 4.233,7.39 L8.822,0.51 C9.182,-0.032 9.914,-0.178 10.454,0.181 C10.795,0.409 10.978,0.782 10.978,1.162 L10.978,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                    <div class="slick-slider aM2rn slick-initialized">
-                                                                        <div class="slick-list">
-                                                                          <!-- Vestuario Cajas -->
-                                                                          @forelse($vestuario as $vestu)
-                                                                            <div class="slick-track" style="width: 230px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
-                                                                                <div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 230px;">
-                                                                                    <div>
-                                                                                        <div class="_2cw7M" tabindex="-1" style="width: 100%; display: inline-block;">
-                                                                                            <div data-hook="slider-gallery-slide" style="height: 100%; padding-left: 10px; padding-right: 10px;"><a
-                                                                                                  href= "{{ url('/ver_producto/vestuario/'.$vestuarios->id) }}" class="_2zTHN _2AHc6" data-hook="product-item-root" tabindex="0"
-                                                                                                  style="height: 100%;">
-                                                                                                    <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" data-hook="product-item-images" style="">
-                                                                                                        <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                              src="./Carrito todo _ Misitio_files/ffb195_e1703f2c2f484bbebe680222338f8990_mv2.webp" alt="Porche"></div><button class="_3ezRD"
-                                                                                                          data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                                    </div>
-                                                                                                    <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                                        <h3 class="_2BULo" data-hook="product-item-name">{{$vestu->talla}}</h3>
-                                                                                                        <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                              class="_23ArP">{{$vestu->price}}</span></div>
-                                                                                                    </div>
-                                                                                            </a></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+                                                                        <div class="row">
+                                                                        <div class="col col-md-12">
+                                                                            <h1 style="color: white">Anillos<br></h1>
+                                                                        </div>
+                                                                        
+                                                                            @forelse($anillos as $anillo)
+                                                                            <div class="card col col-md-4" style="width:400px">
+                                                                              <img class="card-img-top" src="{{ '/'.$anillo->image }}" alt="Card image">
+                                                                              <div class="card-body">
+                                                                                <h4 class="card-title">{{$anillo->name}}</h4>
+                                                                                <p class="card-text">{{$anillo->price}}</p>
+                                                                                <a href="{{ url('/ver_producto/anillos/'.$anillo->id) }}" class="btn btn-primary">Ver más</a>
+                                                                              </div>
                                                                             </div>
-                                                                          @empty
-                                                                            <h1> base de datos vacia </h1>
+                                                                            @empty
+                                                                            <h1 style="color: white"><br>No hay anillos <br><br></h1>
                                                                           @endforelse
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="_1X4Gu AUCWC" style="top: 105px;"><button data-hook="navigation-arrows-right-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M6.077,1.162 C6.077,1.387 6.139,1.612 6.273,1.812 L10.429,8.041 L6.232,14.078 C5.873,14.619 6.019,15.348 6.56,15.707 C7.099,16.068 7.831,15.922 8.19,15.382 L12.82,8.694 C13.084,8.3 13.086,7.786 12.822,7.39 L8.233,0.51 C7.873,-0.032 7.141,-0.178 6.601,0.181 C6.26,0.409 6.077,0.782 6.077,1.162 L6.077,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="style-jy4epu74" id="comp-jy4f5ln9" style="width: 980px;">
-                                                        <div class="comp-jy4f5ln9">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.min.css" rel="stylesheet" type="text/css">
-                                                            <link href="./Carrito todo _ Misitio_files/sliderGallery.stylable.bundle.css" rel="stylesheet" type="text/css">
-                                                            <style>
-                                                                .comp-jy4f5ln9 .main-media-slick-hook .slick-dots li button:before {
-                                                                    text-shadow: #414141 0 1px 0, #414141 1px 0 0, #414141 0 -1px 0, #414141 -1px 0 0
-                                                                }
 
-                                                                .comp-jy4f5ln9 .main-media-slick-hook .slick-dots li.slick-active button:before,
-                                                                .comp-jy4f5ln9 .main-media-slick-hook .slick-dots li button:focus:before,
-                                                                .comp-jy4f5ln9 .main-media-slick-hook .slick-dots li button:hover:before {
-                                                                    color: #414141
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._3uack {
-                                                                    --gallery_priceColor: #999997;
-                                                                    --gallery_priceFontStyle: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: rgb(255, 255, 255);
-                                                                    font: normal normal normal 13px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._3uack ._23IPr {
-                                                                    margin-right: 10px
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._3DJ-f {
-                                                                    --gallery_outOfStockTextColor: #663898;
-                                                                    color: #663898;
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._2zTHN {
-                                                                    --gallery_productBackground: rgba(0, 0, 0, 0);
-                                                                    --gallery_borderWidth: 0;
-                                                                    --gallery_borderColor: #414141;
-                                                                    background-color: rgba(0, 0, 0, 0);
-                                                                    border: 0px solid #414141
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._2zTHN .mxMP4 {
-                                                                    --gallery_ribbonBackground: #9BCB6C;
-                                                                    background-color: #9BCB6C;
-                                                                    left: 0;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._2zTHN ._3ezRD {
-                                                                    --gallery_quickViewTextColor: #000000;
-                                                                    --gallery_quickViewBackground: rgba(255, 255, 255, 0.75);
-                                                                    --gallery_quickViewTextFontStyle: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    color: #000000;
-                                                                    background-color: rgba(255, 255, 255, 0.75);
-                                                                    font: normal normal normal 14px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._2zTHN ._3RqKm {
-                                                                    --gallery_productMargin: 0;
-                                                                    --gallery_alignment: left;
-                                                                    padding: 15px 0px 0px;
-                                                                    text-align: left
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._2zTHN ._3RqKm ._2BULo {
-                                                                    --gallery_titleFontStyle: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    --gallery_titleTextColor: #414141;
-                                                                    font: normal normal normal 16px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration: ;
-                                                                    color: rgb(255, 255, 255)
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._2zTHN ._3RqKm ._11uJt {
-                                                                    --gallery_dividerColor: #414141;
-                                                                    --gallery_dividerWidth: 1;
-                                                                    --gallery_dividerLength: 20;
-                                                                    border-color: #414141;
-                                                                    border-bottom-width: 1px;
-                                                                    width: 20px
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._1WPzN {
-                                                                    right: 10px
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._3-5SE ._2MTGu {
-                                                                    background-color: #414141;
-                                                                    color: #FFFFFF
-                                                                }
-
-                                                                .comp-jy4f5ln9 ._2c0wg {
-                                                                    text-align: start;
-                                                                    color: #414141;
-                                                                    font: normal normal normal 25px/1.4em proxima-n-w01-reg, sans-serif;
-                                                                    text-decoration:
-                                                                }
-                                                            </style>
-                                                            <style>
-                                                                /* must use this as inline so we will have this style on first paint */
-                                                                .edgeFixPaddingTop:before {
-                                                                    content: "";
-                                                                    display: block;
-                                                                }
-
-                                                                .edgeFixPaddingTop0:before {
-                                                                    padding-top: calc(100% / (3 / 2));
-                                                                }
-
-                                                                .edgeFixPaddingTop1:before {
-                                                                    padding-top: calc(100% / (4 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop2:before {
-                                                                    padding-top: calc(100%);
-                                                                }
-
-                                                                .edgeFixPaddingTop3:before {
-                                                                    padding-top: calc(100% / (3 / 4));
-                                                                }
-
-                                                                .edgeFixPaddingTop4:before {
-                                                                    padding-top: calc(100% / (2 / 3));
-                                                                }
-
-                                                                .edgeFixPaddingTop5:before {
-                                                                    padding-top: calc(100% / (16 / 9));
-                                                                }
-
-                                                                .edgeFixPaddingTop6:before {
-                                                                    padding-top: calc(100% / (9 / 16));
-                                                                }
-                                                            </style>
-                                                            <div data-hook="slider-gallery" data-slider-index="0" class="_2DDgw" style="background-color: transparent;">
-                                                                <div data-hook="slides-container" class="_3e4dm">
-                                                                    <div class="_1X4Gu _3CHZl" style="top: 105px;"><button data-hook="navigation-arrows-left-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M10.978,1.162 C10.978,1.387 10.916,1.612 10.782,1.812 L6.626,8.041 L10.823,14.078 C11.182,14.619 11.036,15.348 10.495,15.707 C9.956,16.068 9.224,15.922 8.865,15.382 L4.235,8.694 C3.971,8.3 3.969,7.786 4.233,7.39 L8.822,0.51 C9.182,-0.032 9.914,-0.178 10.454,0.181 C10.795,0.409 10.978,0.782 10.978,1.162 L10.978,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
-                                                                    <!-- Maquillaje grupo -->
-                                                                    <div class="slick-slider aM2rn slick-initialized">
-                                                                        <div class="slick-list">
-                                                                          @forelse($maquillaje as $maq)
-                                                                            <div class="slick-track" style="width: 230px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
-                                                                                <div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 230px;">
-                                                                                    <div>
-                                                                                        <div class="_2cw7M" tabindex="-1" style="width: 100%; display: inline-block;">
-                                                                                            <div data-hook="slider-gallery-slide" style="height: 100%; padding-left: 10px; padding-right: 10px;"><a
-                                                                                                  href="{{ url('/ver_producto/maquillaje/'.$maquillaj->id) }}" class="_2zTHN _2AHc6" data-hook="product-item-root" tabindex="0"
-                                                                                                  style="height: 100%;">
-                                                                                                    <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" data-hook="product-item-images" style="">
-                                                                                                        <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                              src={{ $maq->image }} alt="Motocicleta"></div><button class="_3ezRD"
-                                                                                                          data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                                    </div>
-                                                                                                    <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                                        <h3 class="_2BULo" data-hook="product-item-name">{{ $maq->description }}</h3>
-                                                                                                        <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                              class="_23ArP">{{ $maq->price }}</span></div>
-                                                                                                    </div>
-                                                                                                </a></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+                                                                        <div class="row">
+                                                                        <div class="col col-md-12">
+                                                                            <h1 style="color: white">Pasteles<br></h1>
+                                                                        </div>
+                                                                        
+                                                                            @forelse($pasteles as $pastel)
+                                                                            <div class="card col col-md-4" style="width:400px">
+                                                                              <img class="card-img-top" src="{{ '/'.$pastel->image }}" alt="Card image">
+                                                                              <div class="card-body">
+                                                                                <h4 class="card-title">{{$pastel->name}}</h4>
+                                                                                <p class="card-text">{{$pastel->price}}</p>
+                                                                                <a href="{{url('/ver_producto/pastel/'.$pastel->id)}}" class="btn btn-primary">Ver más</a>
+                                                                              </div>
                                                                             </div>
-                                                                          @empty
-                                                                            <h1> base de datos vacia </h1>
+                                                                            @empty
+                                                                            <h1 style="color: white"><br>No hay pasteles</h1>
                                                                           @endforelse
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="_1X4Gu AUCWC" style="top: 105px;"><button data-hook="navigation-arrows-right-button" class="_3JwT6" type="button"><svg viewBox="0 -2 16 20" fill="currentColor"
-                                                                              width="22px" height="22px">
-                                                                                <path
-                                                                                  d="M6.077,1.162 C6.077,1.387 6.139,1.612 6.273,1.812 L10.429,8.041 L6.232,14.078 C5.873,14.619 6.019,15.348 6.56,15.707 C7.099,16.068 7.831,15.922 8.19,15.382 L12.82,8.694 C13.084,8.3 13.086,7.786 12.822,7.39 L8.233,0.51 C7.873,-0.032 7.141,-0.178 6.601,0.181 C6.26,0.409 6.077,0.782 6.077,1.162 L6.077,1.162 Z"
-                                                                                  fill="currentColor"></path>
-                                                                            </svg></button></div>
+
+                                                                        <div class="row">
+                                                                        <div class="col col-md-12">
+                                                                            <h1 style="color: white">Vestuario<br></h1>
+                                                                        </div>
+                                                                        
+                                                                            @forelse($vestuario as $vestu)
+                                                                            <div class="card col col-md-4" style="width:400px">
+                                                                              <img class="card-img-top" src="{{ '/'.$vestu->image }}" alt="Card image">
+                                                                              <div class="card-body">
+                                                                                <h4 class="card-title">{{$vestu->name}}</h4>
+                                                                                <p class="card-text">{{$vestu->price}}</p>
+                                                                                <a href="{{ url('/ver_producto/vestuario/'.$vestu->id) }}" class="btn btn-primary">Ver más</a>
+                                                                              </div>
+                                                                            </div>
+                                                                            @empty
+                                                                            <h1 style="color: white"><br>No hay vestuarios<br><br></h1>
+                                                                          @endforelse
+                                                                        </div>
+
+                                                                        <div class="row">
+                                                                        <div class="col col-md-12">
+                                                                            <h1 style="color: white">Maquillajes<br></h1>
+                                                                        </div>
+                                                                        
+                                                                            @forelse($maquillaje as $maq)
+                                                                            <div class="card col col-md-4" style="width:400px">
+                                                                              <img class="card-img-top" src="{{ '/'.$maq->image }}" alt="Card image">
+                                                                              <div class="card-body">
+                                                                                <h4 class="card-title">{{$maq->name}}</h4>
+                                                                                <p class="card-text">{{$maq->price}}</p>
+                                                                                <a href="{{ url('/ver_producto/maquillaje/'.$maquillaj->id) }}" class="btn btn-primary">Ver más</a>
+                                                                              </div>
+                                                                            </div>
+                                                                            @empty
+                                                                            <h1 style="color: white"><br>No hay maquillajes <br><br></h1>
+                                                                          @endforelse
+                                                                        </div>
+                                                                      
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -6672,7 +5669,6 @@
                     </div>
                     <footer style="bottom:auto;left:0;margin-left:0;width:100%;min-width:980px;top:;right:;position:" class="style-jy0p9n4q_footer style-jy0p9n4q" data-site-width="980" data-fixedposition="false" data-isrunninginmobile="false"
                       data-state=" " id="SITE_FOOTER">
-                        <div style="left:0;width:100%" id="SITE_FOOTERscreenWidthBackground" class="style-jy0p9n4qscreenWidthBackground"></div>
                         <div style="width:100%" id="SITE_FOOTERcenteredContent" class="style-jy0p9n4qcenteredContent">
                             <div style="margin-left:calc((100% - 980px) / 2);width:980px" id="SITE_FOOTERbg" class="style-jy0p9n4qbg"></div>
                             <div id="SITE_FOOTERinlineContent" class="style-jy0p9n4qinlineContent">

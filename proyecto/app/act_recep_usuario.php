@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class act_recep_usuario extends Model
 {
 	protected $fillable = [
-        'user_id',
+        'user_id', 'actividad_recepcion_id'
     ];
     
     public function actividad()

@@ -8,7 +8,7 @@ class lugar_usuario extends Model
 {
 
 	protected $fillable = [
-        'user_id',
+        'usuario_id', 'lugar_id', 'estado'
     ];
     
     public function lugar()

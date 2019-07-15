@@ -8,7 +8,7 @@ class anillo_usuario extends Model
 {
 
 	protected $fillable = [
-        'user_id',
+        'user_id', 'anillo_id'
     ];
 
     public function anillo()

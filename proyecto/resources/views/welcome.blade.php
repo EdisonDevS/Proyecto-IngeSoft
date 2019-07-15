@@ -4964,7 +4964,7 @@
                           .comp-jy34zcpf ._3tSTQ .m8g_G {
                             fill: #7FCCF7
                           }
-                        </style><a aria-label="Carrito con 0 items" class="_1gJ4T NBa0J _3tSTQ" data-hook="cart-icon-button" href="https://javi980817.wixsite.com/mibodamisreglas/cart-page" role="button">
+                        </style><a aria-label="Carrito con 0 items" class="_1gJ4T NBa0J _3tSTQ" data-hook="cart-icon-button" href="{{ url('/ver_carrito/'.auth()->user()->id) }}" role="button">
                           <div class="kOc8C" style="padding-bottom:83.96560445118867%;visibility:visible" data-hook="svg-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="198.6 340 197.7 166"
                               preserveAspectRatio="xMinYMax meet" data-hook="svg-icon-2">
                               <polyline points="396.5 395.9 368.5 467.4 263.1 467.4 226.2 369.8 203.6 369.8 198.8 356.7 235.1 356.7 272 454.3 359.5 454.3 381.6 395.9"></polyline>

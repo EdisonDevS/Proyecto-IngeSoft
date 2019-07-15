@@ -409,7 +409,8 @@ class ProductoController extends Controller
     public function agregarCarritoAct_LM(Request $request)
     {
         $relacion=ac_lm_usuario::create([
-            'user_id' => $request['user_id'],
+            'estado' => 1,
+            'user_id' => $request['usuario_id'],
             'actividad_luna_de_miel_id' => $request['producto_id'],
         ]);
 
@@ -419,7 +420,8 @@ class ProductoController extends Controller
     public function agregarCarritoAct_REC(Request $request)
     {
         $relacion=ac_recep_usuario::create([
-            'user_id' => $request['user_id'],
+            'estado' => 1,
+            'user_id' => $request['usuario_id'],
             'actividad_recepcion_id' => $request['producto_id'],
         ]);
 
@@ -429,7 +431,8 @@ class ProductoController extends Controller
     public function agregarCarrito_LUGAR(Request $request)
     {
         $relacion=lugar_usuario::create([
-            'user_id' => $request['user_id'],
+            'estado' => 1,
+            'user_id' => $request['usuario_id'],
             'lugar_id' => $request['producto_id'],
         ]);
 
@@ -440,7 +443,8 @@ class ProductoController extends Controller
     {
        
         $relacion=transporte_usuario::create([
-            'user_id' => $request['user_id'],
+            'estado' => 1,
+            'user_id' => $request['usuario_id'],
             'transporte_id' => $request['producto_id'],
         ]);
 
@@ -451,7 +455,8 @@ class ProductoController extends Controller
     {
         
         $relacion=plato_usuario::create([
-            'user_id' => $request['user_id'],
+            'estado' => 1,
+            'user_id' => $request['usuario_id'],
             'plato_id' => $request['producto_id'],
         ]);
 
@@ -461,7 +466,8 @@ class ProductoController extends Controller
     public function agregarCarrito_VESTUARIO(Request $request)
     {
         $relacion=vestuario_usuario::create([
-            'user_id' => $request['user_id'],
+            'estado' => 1,
+            'user_id' => $request['usuario_id'],
             'vestuario_id' => $request['producto_id'],
         ]);
 
@@ -471,7 +477,8 @@ class ProductoController extends Controller
     public function agregarCarrito_MAQUILLAJE(Request $request)
     {
         $relacion=maquillaje_usuario::create([
-            'user_id' => $request['user_id'],
+            'estado' => 1,
+            'user_id' => $request['usuario_id'],
             'maquillaje_id' => $request['producto_id'],
         ]);
 
@@ -481,7 +488,8 @@ class ProductoController extends Controller
     public function agregarCarrito_ANILLO(Request $request)
     {
         $relacion=anillo_usuario::create([
-            'user_id' => $request['user_id'],
+            'estado' => 1,
+            'user_id' => $request['usuario_id'],
             'anillo_id' => $request['producto_id'],
         ]);
 

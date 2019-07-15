@@ -1,6 +1,7 @@
 <?php
 //grupo para las rutas de administración
 use App\Vestuario;
+use App\User;
 use App\Maquillaje;
 use App\Transporte;
 use App\Plato;
@@ -204,7 +205,6 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/ver_producto/luna_de_miel/{id}', function($id)
 	{
 		$ceremonia=Lugar::find($id);
-		dd($ceremonia);
 		return view('categoria.product_pages.lunademiel', compact('ceremonia'));
 	});
 
@@ -271,6 +271,19 @@ Route::group(['middleware' => ['web']], function () {
 	Route::post('/agregar_al_carro/maquillaje', 'ProductoController@agregarCarrito_MAQUILLAJE');
 
 	Route::post('/agregar_al_carro/anillo', 'ProductoController@agregarCarrito_ANILLO');
+
+	Route::get('/ver_carrito/{id}', function($id)
+	{
+		$ceremonias=User::find($id)->lugares()->where('type', 'Ceremonia')->get();
+		$recepciones=User::find($id)->lugares()->where('type', 'Recepcion')->get();
+		$anillos=User::find($id)->anillos;
+		$pasteles=User::find($id)->platos;
+		$vestuario=User::find($id)->vestuarios;
+		$maquillaje=User::find($id)->maquillajes;
+		$lunademiel=User::find($id)->lugares()->where('type', 'LunaDeMiel')->get();
+
+		return view('categoria.carritocompleto', compact('ceremonias','recepciones','anillos','pasteles','vestuario','maquillaje','lunademiel'));
+	});
 
 
 	Auth::routes();

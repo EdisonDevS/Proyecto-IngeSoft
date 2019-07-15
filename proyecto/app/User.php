@@ -4,6 +4,16 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Vestuario;
+use App\User;
+use App\Maquillaje;
+use App\Transporte;
+use App\Plato;
+use App\Ceremonia;
+use App\Lugar;
+use App\Anillo;
+use App\ActividadLunaDeMiel;
+use App\ActividadRecepcion;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -40,41 +50,41 @@ class User extends Authenticatable
 
     public function lugares()
     {
-        return $this->belongsToMany('App\lugar_usuario');
+        return $this->belongsToMany(Lugar::class, 'lugar_usuarios', 'user_id', 'lugar_id');
     }
 
     public function transportes()
     {
-        return $this->belongsToMany('App\transporte_usuario');
+        return $this->belongsToMany(Transporte::class, 'transporte_usuarios', 'user_id', 'transporte_id');
     }
 
     public function platos()
     {
-        return $this->belongsToMany('App\plato_usuario');
+        return $this->belongsToMany(Plato::class, 'plato_usuarios', 'user_id', 'plato_id');
     }
 
     public function vestuarios()
     {
-        return $this->belongsToMany('App\vestuario_usuario');
+        return $this->belongsToMany(Vestuario::class, 'vestuario_usuarios', 'user_id', 'vestuario_id');
     }
 
     public function maquillajes()
     {
-        return $this->belongsToMany('App\maquillaje_usuario');
+        return $this->belongsToMany(Maquillaje::class, 'maquillaje_usuarios', 'user_id', 'maquillaje_id');
     }
 
     public function anillos()
     {
-        return $this->belongsToMany('App\anillo_usuario');
+        return $this->belongsToMany(Anillo::class, 'anillo_usuarios', 'user_id', 'anillo_id');
     }
 
     public function actividades_recepcion()
     {
-        return $this->belongsToMany('App\act_recep_usuario');
+        return $this->belongsToMany(ActividadRecepcion::class, 'act_recep_usuarios', 'user_id', 'actividad_recepcion_id');
     }
 
     public function actividades_luna_de_miel()
     {
-        return $this->belongsToMany('App\act_lm_usuario');
+        return $this->belongsToMany(ActividadRecepcion::class, 'act_lm_usuarios', 'user_id', 'actividad_luna_de_miel_id');
     }
 }
