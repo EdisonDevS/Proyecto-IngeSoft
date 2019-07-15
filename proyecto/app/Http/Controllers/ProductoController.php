@@ -19,7 +19,7 @@ class ProductoController extends Controller
 
     function crearLugarCeremonia(Request $request)
     {
-        
+
 
         $lugar=Lugar::updateOrCreate(['id'=>$request['id']],[
             'name'=>$request['nombre'],
@@ -31,16 +31,16 @@ class ProductoController extends Controller
 
 
         if($request['image'])
-        {    
+        {
             $photo_name='images/products/'.'lugar'.$lugar->id.'.'.$request->file('image')->getClientOriginalExtension();
 
             Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
 
             $lugar->image=$photo_name;
-            $lugar->save();   
+            $lugar->save();
         }
 
-        
+
         return redirect()->back();
     }
 
@@ -61,9 +61,9 @@ class ProductoController extends Controller
             Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
 
             $lugar->image=$photo_name;
-            $lugar->save();    
+            $lugar->save();
         }
-        
+
         return redirect()->back();
     }
 
@@ -80,9 +80,9 @@ class ProductoController extends Controller
         if($request['image'])
         {
             $photo_name='images/products/'.'lugar'.$lugar->id.'.'.$request->file('image')->getClientOriginalExtension();
-    
+
             Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
-    
+
             $lugar->image=$photo_name;
             $lugar->save();
         }
@@ -101,9 +101,9 @@ class ProductoController extends Controller
         if($request['image'])
         {
             $photo_name='images/products/'.'vestuario'.$ropa->id.'.'.$request->file('image')->getClientOriginalExtension();
-    
+
             Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
-    
+
             $ropa->image=$photo_name;
             $ropa->save();
         }
@@ -121,9 +121,9 @@ class ProductoController extends Controller
         if($request['image'])
         {
             $photo_name='images/products/'.'maquillaje'.$maquillaje->id.'.'.$request->file('image')->getClientOriginalExtension();
-    
+
             Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
-    
+
             $maquillaje->image=$photo_name;
             $maquillaje->save();
         }
@@ -142,11 +142,11 @@ class ProductoController extends Controller
 
         if($request['image'])
         {
-        
+
                 $photo_name='images/products/'.'transporte'.$transporte->id.'.'.$request->file('image')->getClientOriginalExtension();
-        
+
                 Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
-        
+
                 $transporte->image=$photo_name;
                 $transporte->save();
                 }
@@ -166,9 +166,9 @@ class ProductoController extends Controller
         if($request['image'])
         {
                 $photo_name='images/products/'.'plato'.$cena->id.'.'.$request->file('image')->getClientOriginalExtension();
-        
+
                 Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
-        
+
                 $cena->image=$photo_name;
                 $cena->save();
                 }
@@ -183,13 +183,13 @@ class ProductoController extends Controller
             'description' => $request['descripcion'],
             'price' => $request['precio']
         ]);
-        
+
         if($request['image'])
         {
                 $photo_name='images/products/'.'anillo'.$anillo->id.'.'.$request->file('image')->getClientOriginalExtension();
-        
+
                 Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
-        
+
                 $anillo->image=$photo_name;
                 $anillo->save();
                 }
@@ -207,14 +207,15 @@ class ProductoController extends Controller
 
         if($request['image'])
         {
-        
+
                 $photo_name='images/products/'.'actividad_recepcion'.$actividad->id.'.'.$request->file('image')->getClientOriginalExtension();
-        
+
                 Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
-        
+
                 $actividad->image=$photo_name;
                 $actividad->save();
                 }
+                
         return redirect()->back();
     }
 
@@ -229,9 +230,9 @@ class ProductoController extends Controller
         if($request['image'])
         {
                 $photo_name='images/products/'.'actividad_recepcion'.$actividad->id.'.'.$request->file('image')->getClientOriginalExtension();
-        
+
                 Image::make($request->file('image'))->resize(255,255)->save(public_path($photo_name));
-        
+
                 $actividad->image=$photo_name;
                 $actividad->save();
                 }
@@ -394,6 +395,6 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
-    
+
 
 }

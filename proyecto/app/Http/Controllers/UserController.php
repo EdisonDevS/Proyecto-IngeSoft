@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 use \App\User;
 use \App\Conyugue;
 use \App\Lugar;
+use \App\Plato;
+use \App\ActividadRecepcion;
+use \App\ActividadLunaDeMiel;
+use \App\Anillo;
+use \App\Maquillaje;
+use \App\Transporte;
+use \App\Vestuario;
 use Intervention\Image\Facades\Image as Image;
 use Illuminate\Http\Request;
 
@@ -78,5 +85,56 @@ class UserController extends Controller
 	{
 		$lunademiel = Lugar::where('type', 'LunaDeMiel')->get();
 		return view('categoria.lunamiel', compact('lunademiel'));
+	}
+
+	public function mostrarpastel(){
+		$pasteles = Plato::all();
+		return view('categoria.pasteles',compact('pasteles'));
+	}
+
+	public function mostraranillos()
+	{
+		$anillos = Anillo::all();
+		return view('categoria.anillos',compact('anillos'));
+	}
+
+	public function mostrartransporte(){
+		$transporte = Transporte::all();
+		return view('categoria.transporte', compact('transporte'));
+	}
+
+	public function mostrarceremonia()
+	{
+		$ceremonias=Lugar::where('type', 'Ceremonia')->get();
+		return view('categoria.ceremonia', compact('ceremonias'));
+	}
+
+	public function mostrarActividadesRecepcion()
+	{
+		$recepciones=ActividadRecepcion::all();
+		return view('categoria.actividad_recepcion', compact('recepciones'));
+	}
+
+	public function mostrarVestuario(){
+		$vestuario = Vestuario::all();
+		return view('categoria.vestuario',compact('vestuario'));
+	}
+
+	public function mostrarmaquillaje()
+	{
+		$maquillaje=Maquillaje::all();
+		return view('categoria.maquillaje', compact('maquillaje'));
+	}
+
+
+	public function mostrarActividadesLunaDeMiel()
+	{
+		$lunademiel=ActividadLunaDeMiel::all();
+		return view('categoria.actividad_lunademiel', compact('lunademiel'));
+	}
+
+	public function mostrarRecepcion(){
+		$recepcion = Lugar::where('type', 'Recepcion')->get();
+		return view("categoria.recepcion",compact('recepcion'));
 	}
 }

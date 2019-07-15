@@ -4934,54 +4934,22 @@
                                                                         <div></div>
                                                                         <section data-hook="product-list" aria-label="Galería de productos">
                                                                             <ul class="_2Irj0" data-hook="product-list-wrapper">
-                                                                                <li><a href="https://javi980817.wixsite.com/mibodamisreglas/product-page/brochetas-de-pastel" class="_2zTHN _2AHc6" data-hook="product-item-root">
+                                                                              @forelse ($pasteles as $pastel)
+                                                                                    <li><a href="{{url('/ver_producto/pastel/'.$pastel->id)}}" class="_2zTHN _2AHc6" data-hook="product-item-root">
                                                                                         <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" style="" data-hook="product-item-images">
                                                                                             <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                  src="./Pasteles _ Misitio_files/ffb195_893691e3135c4fbaae25595b641dbb6f_mv2.webp" alt="Brochetas de Pastel"></div><button class="_3ezRD"
+                                                                                                  src="{{$pastel -> image}}" alt="Brochetas de Pastel"></div><button class="_3ezRD"
                                                                                               data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
                                                                                         </div>
                                                                                         <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                            <h3 class="_2BULo" data-hook="product-item-name">Brochetas de Pastel</h3>
+                                                                                            <h3 class="_2BULo" data-hook="product-item-name">{{ $pastel -> name }}</h3>
                                                                                             <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                  class="_23ArP">$10.000,00</span></div>
+                                                                                                  class="_23ArP">{{$pastel -> price}}</span></div>
                                                                                         </div>
                                                                                     </a></li>
-                                                                                <li><a href="https://javi980817.wixsite.com/mibodamisreglas/product-page/mofin" class="_2zTHN _2AHc6" data-hook="product-item-root">
-                                                                                        <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" style="" data-hook="product-item-images">
-                                                                                            <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                  src="./Pasteles _ Misitio_files/ffb195_afaedefeeada48b9866b0d719b8c2a75_mv2.webp" alt="Mofin"></div><button class="_3ezRD"
-                                                                                              data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                        </div>
-                                                                                        <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                            <h3 class="_2BULo" data-hook="product-item-name">Mofin</h3>
-                                                                                            <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                  class="_23ArP">$8.000,00</span></div>
-                                                                                        </div>
-                                                                                    </a></li>
-                                                                                <li><a href="https://javi980817.wixsite.com/mibodamisreglas/product-page/torta-fria-con-galletas" class="_2zTHN _2AHc6" data-hook="product-item-root">
-                                                                                        <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" style="" data-hook="product-item-images">
-                                                                                            <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                  src="./Pasteles _ Misitio_files/ffb195_cb76b3f1a68e4b51bf00b05e305f5005_mv2.webp" alt="Torta fria con galletas"></div><button class="_3ezRD"
-                                                                                              data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                        </div>
-                                                                                        <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                            <h3 class="_2BULo" data-hook="product-item-name">Torta fria con galletas</h3>
-                                                                                            <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                  class="_23ArP">$15.000,00</span></div>
-                                                                                        </div>
-                                                                                    </a></li>
-                                                                                <li><a href="https://javi980817.wixsite.com/mibodamisreglas/product-page/decorado-de-fruta" class="_2zTHN _2AHc6" data-hook="product-item-root">
-                                                                                        <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" style="" data-hook="product-item-images">
-                                                                                            <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                  src="./Pasteles _ Misitio_files/ffb195_49bf10d6835b44b185bf084f30dccf8c_mv2.webp" alt="Decorado de Fruta"></div><button class="_3ezRD"
-                                                                                              data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                        </div>
-                                                                                        <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                            <h3 class="_2BULo" data-hook="product-item-name">Decorado de Fruta</h3>
-                                                                                            <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                  class="_23ArP">$85.000,00</span></div>
-                                                                                        </div>
-                                                                                    </a></li>
+                                                                                  @empty
+                                                                                    <h1>No hay elementos en la base de datos</h1>
+                                                                              @endforelse
                                                                             </ul>
                                                                         </section>
                                                                     </div>
@@ -6800,7 +6768,7 @@
                             "NO_PRODUCTS_MESSAGE_MINI_GALLERY_MAIN": "No tenemos productos para mostrar en este momento.",
                             "sort.PRICE_HIGH": "Precio (de alto a bajo)",
                             "gallery.filters.filterList.items.collection.label": "Categoría",
-                            "sr.ANNOUNCE_FOUND_ITEMS_ON_FILTERS_UPDATE": "{{numberOfFoundProducts}} items coincidieron con tu criterio de búsqueda.",
+                            "sr.ANNOUNCE_FOUND_ITEMS_ON_FILTERS_UPDATE": "{{count($pasteles)}} items coincidieron con tu criterio de búsqueda.",
                             "sort.NAME_ZA": "Nombre de Z-A",
                             "sort.PRICE_LOW": "Precio (de bajo a alto)",
                             "gallery.filters.filterList.items.price.label": "Precio",

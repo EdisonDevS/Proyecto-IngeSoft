@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<!-- saved from url=(0057)https://javi980817.wixsite.com/mibodamisreglas/transporte -->
+<!DOCTYPE html> <!-- saved from url=(0057)https://javi980817.wixsite.com/mibodamisreglas/transporte -->
 <html lang="es" class="">
 
 <head>
@@ -4937,54 +4936,22 @@
                                                                         <div></div>
                                                                         <section data-hook="product-list" aria-label="Galería de productos">
                                                                             <ul class="_2Irj0" data-hook="product-list-wrapper">
-                                                                                <li><a href="https://javi980817.wixsite.com/mibodamisreglas/product-page/motocicleta" class="_2zTHN _2AHc6" data-hook="product-item-root">
+                                                                              @forelse ($transporte as $trans)
+                                                                                <li><a href="{{ url('/ver_producto/transporte/'.$trans->id) }}" class="_2zTHN _2AHc6" data-hook="product-item-root">
                                                                                         <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" style="" data-hook="product-item-images">
                                                                                             <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                  src="./Transporte _ Misitio_files/ffb195_4722156b532640539f68693c636a5710.webp" alt="Motocicleta"></div><button class="_3ezRD"
+                                                                                                  src="{{$trans -> image}}" alt="Motocicleta"></div><button class="_3ezRD"
                                                                                               data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
                                                                                         </div>
                                                                                         <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                            <h3 class="_2BULo" data-hook="product-item-name">Motocicleta</h3>
+                                                                                            <h3 class="_2BULo" data-hook="product-item-name">{{ $trans->name }}</h3>
                                                                                             <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                  class="_23ArP">$320.000,00</span></div>
+                                                                                                  class="_23ArP">"{{ $trans -> price}}"</span></div>
                                                                                         </div>
                                                                                     </a></li>
-                                                                                <li><a href="https://javi980817.wixsite.com/mibodamisreglas/product-page/carruaje" class="_2zTHN _2AHc6" data-hook="product-item-root">
-                                                                                        <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" style="" data-hook="product-item-images">
-                                                                                            <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                  src="./Transporte _ Misitio_files/ffb195_823206a012244ae2b012b1a858015ab2_mv2.webp" alt="Carruaje"></div><button class="_3ezRD"
-                                                                                              data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                        </div>
-                                                                                        <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                            <h3 class="_2BULo" data-hook="product-item-name">Carruaje</h3>
-                                                                                            <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                  class="_23ArP">$12.000.000,00</span></div>
-                                                                                        </div>
-                                                                                    </a></li>
-                                                                                <li><a href="https://javi980817.wixsite.com/mibodamisreglas/product-page/porche" class="_2zTHN _2AHc6" data-hook="product-item-root">
-                                                                                        <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" style="" data-hook="product-item-images">
-                                                                                            <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                  src="./Transporte _ Misitio_files/ffb195_e1703f2c2f484bbebe680222338f8990_mv2.webp" alt="Porche"></div><button class="_3ezRD"
-                                                                                              data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                        </div>
-                                                                                        <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                            <h3 class="_2BULo" data-hook="product-item-name">Porche</h3>
-                                                                                            <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                  class="_23ArP">$6.000.000,00</span></div>
-                                                                                        </div>
-                                                                                    </a></li>
-                                                                                <li><a href="https://javi980817.wixsite.com/mibodamisreglas/product-page/limocina" class="_2zTHN _2AHc6" data-hook="product-item-root">
-                                                                                        <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" style="" data-hook="product-item-images">
-                                                                                            <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                  src="./Transporte _ Misitio_files/ffb195_c754e243db3e40dd80910c97562092dc_mv2.webp" alt="Limocina"></div><button class="_3ezRD"
-                                                                                              data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
-                                                                                        </div>
-                                                                                        <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                            <h3 class="_2BULo" data-hook="product-item-name">Limocina</h3>
-                                                                                            <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
-                                                                                                  class="_23ArP">$1.200.000,00</span></div>
-                                                                                        </div>
-                                                                                    </a></li>
+                                                                                  @empty
+                                                                                    <h1>No hay elementos en la base de datos</h1>
+                                                                                @endforelse
                                                                             </ul>
                                                                         </section>
                                                                     </div>
@@ -6803,7 +6770,7 @@
                             "NO_PRODUCTS_MESSAGE_MINI_GALLERY_MAIN": "No tenemos productos para mostrar en este momento.",
                             "sort.PRICE_HIGH": "Precio (de alto a bajo)",
                             "gallery.filters.filterList.items.collection.label": "Categoría",
-                            "sr.ANNOUNCE_FOUND_ITEMS_ON_FILTERS_UPDATE": "{{numberOfFoundProducts}} items coincidieron con tu criterio de búsqueda.",
+                            "sr.ANNOUNCE_FOUND_ITEMS_ON_FILTERS_UPDATE": "{{count($transporte)}} items coincidieron con tu criterio de búsqueda.",
                             "sort.NAME_ZA": "Nombre de Z-A",
                             "sort.PRICE_LOW": "Precio (de bajo a alto)",
                             "gallery.filters.filterList.items.price.label": "Precio",

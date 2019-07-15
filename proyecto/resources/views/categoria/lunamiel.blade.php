@@ -4940,14 +4940,14 @@
                                                                         <section data-hook="product-list" aria-label="Galería de productos">
                                                                             <ul class="_2Irj0" data-hook="product-list-wrapper">
                                                                                 @forelse ($lunademiel as $luna)
-                                                                                    <li><a href="https://javi980817.wixsite.com/mibodamisreglas/product-page/los-angeles" class="_2zTHN _2AHc6" data-hook="product-item-root">
+                                                                                    <li><a href="{{ url('/ver_producto/luna_de_miel/'.$luna->id) }}" class="_2zTHN _2AHc6" data-hook="product-item-root">
                                                                                             <div class="_3-5SE edgeFixPaddingTop edgeFixPaddingTop2" style="" data-hook="product-item-images">
                                                                                                 <div class="_1M-R0 t-Mk1 _3sC7k" data-hook="product-thumbnail-wrapper"><img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image"
-                                                                                                      src="{{ $luna -> image}}" alt="Los Angeles"></div><button class="_3ezRD"
+                                                                                                      src="{{ $luna->image }}" alt="Los Angeles"></div><button class="_3ezRD"
                                                                                                   data-hook="product-item-quick-view-button" tabindex="-1" aria-hidden="true">Vista rápida</button>
                                                                                             </div>
                                                                                             <div class="_3RqKm" data-hook="product-item-product-details">
-                                                                                                <h3 class="_2BULo" data-hook="product-item-name">Los Angeles</h3>
+                                                                                                <h3 class="_2BULo" data-hook="product-item-name">{{ $luna->name }}</h3>
                                                                                                 <div class="_3uack"><span class="kpb5P" data-hook="sr-product-item-price-to-pay">Precio</span><span data-hook="product-item-price-to-pay"
                                                                                                       class="_23ArP">{{$luna->price }}</span></div>
                                                                                             </div>

@@ -23,7 +23,7 @@
 							        <td>{{ $lc->name }}</td>
 							        <td>{{ $lc->description }}</td>
 							        <td>{{ $lc->price }}</td>
-							        <td>	
+							        <td>
 							        	<div class="row">
 								        	<div class="col col-md6">
 									        	<form method='GET' action="{{ url('/admin/modificar/productos/lugar_ceremonia/'.$lc->id) }}">
@@ -35,18 +35,18 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
-                   
+
             </div>
-            
+
         </div>
 
         <div class="col-md-12" style="margin-top: 10px">
@@ -82,18 +82,18 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
-                   
+
             </div>
-            
+
         </div>
 
         <div class="col-md-12" style="margin-top: 10px">
@@ -129,18 +129,18 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
-                   
+
             </div>
-            
+
         </div>
 
 
@@ -177,18 +177,18 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
-                   
+
             </div>
-            
+
         </div>
 
 
@@ -224,18 +224,18 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
-                   
+
             </div>
-            
+
         </div>
 
 
@@ -272,18 +272,18 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
-                   
+
             </div>
-            
+
         </div>
 
 
@@ -320,18 +320,18 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
-                   
+
             </div>
-            
+
         </div>
 
 
@@ -368,18 +368,18 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
-                   
+
             </div>
-            
+
         </div>
 
 
@@ -408,7 +408,7 @@
 							        <td>
 							        	<div class="row">
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/manage/modify/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/modificar/productos/actividad_recepcion/'.$lc->id) }}">
 									        		<button class="btn btn-primary btn-block">Modificar</button>
 									        	</form>
 								        	</div>
@@ -417,21 +417,21 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
-                   
+
             </div>
-            
+
         </div>
 
-        
+
         <div class="col-md-12" style="margin-top: 10px">
             <div class="row" style="justify-content: center; display: flex">
                 <div class="col-md-12" style="justify-content: center; display: flex">
@@ -465,17 +465,17 @@
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
-							        		
+
 							        	</div>
 							        </td>
 							    </tr>
 							@endforeach
 					    </tbody>
-					</table>  
-                     
+					</table>
+
                 </div>
             </div>
-            
+
         </div>
 
 

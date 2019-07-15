@@ -1,5 +1,16 @@
 <?php
 //grupo para las rutas de administración
+use App\Vestuario;
+use App\Maquillaje;
+use App\Transporte;
+use App\Plato;
+use App\Ceremonia;
+use App\Lugar;
+use App\Anillo;
+use App\ActividadLunaDeMiel;
+use App\ActividadRecepcion;
+
+
 Route::group(['middleware' => ['auth:admin']], function () {
 
 	//rutas para la gestión de administradores
@@ -165,14 +176,86 @@ Route::group(['middleware' => ['auth:web']], function () {
 //grupo para las rutas de acceso público
 Route::group(['middleware' => ['web']], function () {
 	Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm');
+
 	Route::get("/lunamiel", "UserController@mostrarlunamiellugar")->name('lunamiel');
+	Route::get("/pasteles", "UserController@mostrarpastel")->name('pasteles');
+	Route::get("/transporte", "UserController@mostrartransporte")->name('transporte');
+	Route::get("/ceremonia", "UserController@mostrarceremonia")->name('ceremonia');
+	Route::get("/actividades/recepcion", "UserController@mostrarActividadesRecepcion")->name('actividades_recepcion');
+	Route::get("/anillos", "UserController@mostraranillos")->name('anillos');
+	Route::get("/actividades_luna_de_miel", "UserController@mostrarActividadesLunaDeMiel")->name('actividades_lm');
+	Route::get("/maquillaje", "UserController@mostrarmaquillaje")->name('maquillaje');
+	Route::get("/vestuario", "UserController@mostrarVestuario")->name('vestuario');
+	Route::get("/recepcion", "UserController@mostrarRecepcion")->name('recepcion');
+
 	Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login');
 
 	Route::post('/admin/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
-	Route::get('/', function () {
-		return view('welcome');
+	Route::get('/', 'PackageController@verHome');
+
+
+	Route::get('/ver_producto/ceremonia/{id}', function($id)
+	{
+		$ceremonia=Lugar::find($id);
+		return view('categoria.product_pages.ceremonia', compact('ceremonia'));
 	});
+
+	Route::get('/ver_producto/luna_de_miel/{id}', function($id)
+	{
+		$ceremonia=Lugar::find($id);
+		dd($ceremonia);
+		return view('categoria.product_pages.lunademiel', compact('ceremonia'));
+	});
+
+	Route::get('/ver_producto/recepcion/{id}', function($id)
+	{
+		$ceremonia=Lugar::find($id);
+		return view('categoria.product_pages.recepcion', compact('ceremonia'));
+	});
+
+	Route::get('/ver_producto/transporte/{id}', function($id)
+	{
+		$ceremonia=Transporte::find($id);
+		return view('categoria.product_pages.transporte', compact('ceremonia'));
+	});
+
+	Route::get('/ver_producto/pastel/{id}', function($id)
+	{
+		$ceremonia=Plato::find($id);
+		return view('categoria.product_pages.pastel', compact('ceremonia'));
+	});
+
+	Route::get('/ver_producto/anillos/{id}', function($id)
+	{
+		$ceremonia=Anillo::find($id);
+		return view('categoria.product_pages.anillos', compact('ceremonia'));
+	});
+
+	Route::get('/ver_producto/actividad_recepcion/{id}', function($id)
+	{
+		$ceremonia=ActividadRecepcion::find($id);
+		return view('categoria.product_pages.actividad_recepcion', compact('ceremonia'));
+	});
+
+	Route::get('/ver_producto/vestuario/{id}', function($id)
+	{
+		$ceremonia=Vestuario::find($id);
+		return view('categoria.product_pages.vestuario', compact('ceremonia'));
+	});
+
+	Route::get('/ver_producto/maquillaje/{id}', function($id)
+	{
+		$ceremonia=Maquillaje::find($id);
+		return view('categoria.product_pages.maquillaje', compact('ceremonia'));
+	});
+
+	Route::get('/ver_producto/actividad_lunademiel/{id}', function($id)
+	{
+		$ceremonia=ActividadLunaDeMiel::find($id);
+		return view('categoria.product_pages.actividad_lunademiel', compact('ceremonia'));
+	});
+
 
 	Auth::routes();
 
