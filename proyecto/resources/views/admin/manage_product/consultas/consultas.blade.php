@@ -5,7 +5,7 @@
         <div class="col-md-12" style="margin-top: 10px">
             <div class="row" style="justify-content: center; display: flex">
                 <div class="col-md-12" style="justify-content: center; display: flex">
-                    <h1>Lugar Ceremonia</h1>
+                    <h1>Ceremonia</h1>
                 </div>
                 <div class="col-md-12" style="justify-content: center; display: flex;">
                   	<table class="table table-striped">
@@ -31,7 +31,7 @@
 									        	</form>
 								        	</div>
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/manage/delete/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/borrar/eliminarLugarCeremonia/'.$lc->id) }}">
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
@@ -78,7 +78,7 @@
 									        	</form>
 								        	</div>
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/manage/delete/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/borrar/eliminarLugarRecepcion/'.$lc->id) }}">
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
@@ -173,7 +173,7 @@
 									        	</form>
 								        	</div>
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/manage/delete/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/borrar/eliminarTransporte/'.$lc->id) }}">
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
@@ -220,7 +220,7 @@
 									        	</form>
 								        	</div>
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/manage/delete/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/borrar/eliminarPastel/'.$lc->id) }}">
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
@@ -268,7 +268,7 @@
 									        	</form>
 								        	</div>
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/manage/delete/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/borrar/eliminarVestuario/'.$lc->id) }}">
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
@@ -316,7 +316,7 @@
 									        	</form>
 								        	</div>
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/manage/delete/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/borrar/eliminarMaquillaje/'.$lc->id) }}">
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
@@ -364,7 +364,7 @@
 									        	</form>
 								        	</div>
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/manage/delete/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/borrar/eliminarAnillo/'.$lc->id) }}">
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
@@ -413,7 +413,7 @@
 									        	</form>
 								        	</div>
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/modificar/productos/actividad_recepcion/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/borrar/eliminarActividadRecepcion/'.$lc->id) }}">
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>
@@ -461,7 +461,7 @@
 									        	</form>
 								        	</div>
 								        	<div class="col col-md6">
-									        	<form method='GET' action="{{ url('/admin/manage/delete/'.$lc->id) }}">
+									        	<form method='GET' action="{{ url('/admin/borrar/eliminarActividadLunaDeMiel/'.$lc->id) }}">
 									        		<button class="btn btn-danger btn-block">Eliminar</button>
 									        	</form>
 								        	</div>

@@ -10,19 +10,24 @@
                     
                     <form method='POST' action="{{ route('crear_transporte') }}" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $transporte->id }}" >
                         <div class="row" style="justify-content: center; display: flex;">
                             <div class="col-md-4" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="nombre" placeholder="Nombre">    
+                                <input value="{{ $transporte->name }}" class="form-control" type="text" name="nombre" placeholder="Nombre">    
                             </div>
                             <div class="col-md-4" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="tipo" placeholder="Tipo">    
+                                <input value="{{ $transporte->type }}" class="form-control" type="text" name="tipo" placeholder="Tipo">    
                             </div>
                             <div class="col-md-4" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="precio" placeholder="Precio">    
+                                <input value="{{ $transporte->price }}" class="form-control" type="text" name="precio" placeholder="Precio">    
                             </div>
 
                             <div class="col-md-12" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="descripcion" placeholder="Descripcion">
+                                <input value="{{ $transporte->description }}" class="form-control" type="text" name="descripcion" placeholder="Descripcion">
+                            </div>
+
+                            <div class="col-md-12" style="justify-content: center; display: flex; margin-top: 10px">
+                                <img src="{{ '/'.$transporte->image }}" class="rounded-circle">
                             </div>
 
 

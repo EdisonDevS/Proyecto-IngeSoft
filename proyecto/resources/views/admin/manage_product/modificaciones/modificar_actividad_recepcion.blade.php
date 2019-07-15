@@ -10,16 +10,21 @@
                     
                     <form method='POST' action="{{ route('actividad_recepcion') }}" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $actividad_recepcion->id }}" >
                         <div class="row" style="justify-content: center; display: flex;">
                             <div class="col-md-6" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="nombre" placeholder="Nombre">    
+                                <input value="{{ $actividad_recepcion->name }}" class="form-control" type="text" name="nombre" placeholder="Nombre">    
                             </div>
                             <div class="col-md-6" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="precio" placeholder="Precio">    
+                                <input value="{{ $actividad_recepcion->price }}" class="form-control" type="text" name="precio" placeholder="Precio">    
                             </div>
 
                             <div class="col-md-12" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="descripcion" placeholder="Descripcion">
+                                <input value="{{ $actividad_recepcion->description }}" class="form-control" type="text" name="descripcion" placeholder="Descripcion">
+                            </div>
+
+                            <div class="col-md-12" style="justify-content: center; display: flex; margin-top: 10px">
+                                <img src="{{ '/'.$lugar->image }}" class="rounded-circle">
                             </div>
 
 

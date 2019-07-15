@@ -117,6 +117,27 @@ Route::group(['middleware' => ['auth:admin']], function () {
 	Route::get('/admin/modificar/productos/actividad_lm/{id}', 'ProductoController@modificarActividadLunaDeMiel')->name('modificar_actividad_lm');
 
 
+	Route::get('/admin/borrar/eliminarLugarCeremonia/{id}', 'ProductoController@eliminarLugarCeremonia');
+
+	Route::get('/admin/borrar/eliminarLugarLunaDeMiel/{id}', 'ProductoController@eliminarLugarLunaDeMiel');
+
+	Route::get('/admin/borrar/eliminarLugarRecepcion/{id}', 'ProductoController@eliminarLugarRecepcion');
+
+	Route::get('/admin/borrar/eliminarTransporte/{id}', 'ProductoController@eliminarTransporte');
+
+	Route::get('/admin/borrar/eliminarPastel/{id}', 'ProductoController@eliminarPastel');
+
+	Route::get('/admin/borrar/eliminarVestuario/{id}', 'ProductoController@eliminarVestuario');
+
+	Route::get('/admin/borrar/eliminarMaquillaje/{id}', 'ProductoController@eliminarMaquillaje');
+
+	Route::get('/admin/borrar/eliminarAnillo/{id}', 'ProductoController@eliminarAnillo');
+
+	Route::get('/admin/borrar/eliminarActividadRecepcion/{id}', 'ProductoController@eliminarActividadRecepcion');
+
+	Route::get('/admin/borrar/eliminarActividadLunaDeMiel/{id}', 'ProductoController@eliminarActividadLunaDeMiel');
+
+
 
 });
 

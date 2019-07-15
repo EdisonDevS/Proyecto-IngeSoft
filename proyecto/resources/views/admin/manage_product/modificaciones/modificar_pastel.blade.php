@@ -10,19 +10,24 @@
                     
                     <form method='POST' action="{{ route('crear_cena') }}" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $pastel->id }}" >
                         <div class="row" style="justify-content: center; display: flex;">
                             <div class="col-md-4" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="nombre" placeholder="Nombre">    
+                                <input value="{{ $pastel->name }}" class="form-control" type="text" name="nombre" placeholder="Nombre">    
                             </div>
                             <div class="col-md-4" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="tipo" placeholder="Tipo">    
+                                <input value="{{ $pastel->type }}" class="form-control" type="text" name="tipo" placeholder="Tipo">    
                             </div>
                             <div class="col-md-4" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="precio" placeholder="Precio">    
+                                <input value="{{ $pastel->price }}" class="form-control" type="text" name="precio" placeholder="Precio">    
                             </div>
 
                             <div class="col-md-12" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="descripcion" placeholder="Descripcion">
+                                <input value="{{ $pastel->description }}" class="form-control" type="text" name="descripcion" placeholder="Descripcion">
+                            </div>
+
+                            <div class="col-md-12" style="justify-content: center; display: flex; margin-top: 10px">
+                                <img src="{{ '/'.$pastel->image }}" class="rounded-circle">
                             </div>
 
 

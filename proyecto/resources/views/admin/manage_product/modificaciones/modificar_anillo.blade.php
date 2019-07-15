@@ -10,16 +10,21 @@
                     
                     <form method='POST' action="{{ route('crear_anillo') }}" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $anillo->id }}" >
                         <div class="row" style="justify-content: center; display: flex;">
                             <div class="col-md-6" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="talla" placeholder="Talla">    
+                                <input value="{{ $anillo->talla }}"  class="form-control" type="text" name="talla" placeholder="Talla">    
                             </div>
                             <div class="col-md-6" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="precio" placeholder="Precio">    
+                                <input value="{{ $anillo->price }}"  class="form-control" type="text" name="precio" placeholder="Precio">    
                             </div>
 
                             <div class="col-md-12" style="margin-top: 10px">
-                                <input class="form-control" type="text" name="descripcion" placeholder="Descripcion">
+                                <input value="{{ $anillo->description }}"  class="form-control" type="text" name="descripcion" placeholder="Descripcion">
+                            </div>
+
+                            <div class="col-md-12" style="justify-content: center; display: flex; margin-top: 10px">
+                                <img src="{{ '/'.$lugar->image }}" class="rounded-circle">
                             </div>
 
 

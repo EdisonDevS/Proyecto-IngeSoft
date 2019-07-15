@@ -295,7 +295,7 @@ class ProductoController extends Controller
 
     function modificarPastel($id)
     {
-        $pastel=Pastel::find($id);
+        $pastel=Plato::find($id);
         return view('admin.manage_product.modificaciones.modificar_pastel', compact('pastel'));
     }
 
@@ -312,7 +312,7 @@ class ProductoController extends Controller
         return view('admin.manage_product.modificaciones.modificar_maquillaje', compact('maquillaje'));
     }
 
-    function modificar_anillo($id)
+    function modificarAnillo($id)
     {
         $anillo=Anillo::find($id);
         return view('admin.manage_product.modificaciones.modificar_anillo', compact('anillo'));
@@ -328,6 +328,70 @@ class ProductoController extends Controller
     {
         $actividad_luna_de_miel=ActividadRecepcion::find($id);
         return view('admin.manage_product.modificaciones.modificar_actividad_luna_de_miel', compact('actividad_luna_de_miel'));
+    }
+
+
+
+    function eliminarLugarCeremonia($id)
+    {
+        Lugar::destroy($id);
+        return redirect()->back();
+    }
+
+    function eliminarLugarLunaDeMiel($id)
+    {
+        Lugar::destroy($id);
+        return redirect()->back();
+    }
+
+    function eliminarLugarRecepcion($id)
+    {
+        Lugar::destroy($id);
+        return redirect()->back();
+    }
+
+    function eliminarTransporte($id)
+    {
+        Transporte::destroy($id);
+        return redirect()->back();
+    }
+
+
+    function eliminarPastel($id)
+    {
+        Plato::destroy($id);
+        return redirect()->back();
+    }
+
+
+    function eliminarVestuario($id)
+    {
+        Vestuario::destroy($id);
+        return redirect()->back();
+    }
+
+    function eliminarMaquillaje($id)
+    {
+        Maquillaje::destroy($id);
+        return redirect()->back();
+    }
+
+    function eliminarAnillo($id)
+    {
+        Anillo::destroy($id);
+        return redirect()->back();
+    }
+
+    function eliminarActividadRecepcion($id)
+    {
+        ActividadRecepcion::destroy($id);
+        return redirect()->back();
+    }
+
+    function eliminarActividadLunaDeMiel($id)
+    {
+        ActividadLunaDeMiel::destroy($id);
+        return redirect()->back();
     }
 
     
