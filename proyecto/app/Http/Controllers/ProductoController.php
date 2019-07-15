@@ -15,6 +15,15 @@ use App\Anillo;
 use App\ActividadLunaDeMiel;
 use App\ActividadRecepcion;
 
+use App\ac_lm_usuario;
+use App\ac_recep_usuario;
+use App\lugar_usuario;
+use App\transporte_usuario;
+use App\plato_usuario;
+use App\vestuario_usuario;
+use App\maquillaje_usuario;
+use App\anillo_usuario;
+
 class ProductoController extends Controller
 {
 

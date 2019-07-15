@@ -5367,6 +5367,7 @@
                                       style="font-size:23px;">{{ $ceremonia->price}}</span></span></span></span></h2>
                           </div>
                           <form action="{{ url('/agregar_al_carro/lugar')}}" method="POST">
+                            @csrf
                             <input type="hidden" name="usuario_id" value="{{ auth()->user()->id }}">
                             <input type="hidden" name="producto_id" value="{{ $ceremonia->id }}">
                             <button type="submit" class="btn btn-success">
